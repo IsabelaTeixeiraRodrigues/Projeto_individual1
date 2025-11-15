@@ -67,38 +67,42 @@
 
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
   let listaEmpresasCadastradas = [];
   var listaEspeciais = ['@','#','$','%','&','*'];
 
   function cadastrar() {
-    // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nickVar = nick_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var senhaMinuscula = senhavar.toLowerCase()
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+var nickVar = nick_input.value;
+var emailVar = email_input.value;
+var senhaVar = senha_input.value;
+var confirmacaoSenhaVar = confirmacao_senha_input.value;
+var senhaMinuscula = senhaVar.toLowerCase(); 
 
-    // Verificando se há algum campo em branco
-    if (
-      nickVar == "" ||
-      (emailVar == "" || emailVar.includes('@.com') == false),
-      (senhaVar == "" ||  senhaVar < 8) || (senhaVar == senhaMinuscula || senhaVar.includes(listaEspeciais) == false),
-      confirmacaoSenhaVar == ""
-    ) {
-      cardErro.style.display = "block";
-      alert("(Mensagem de erro para todos os campos em branco)")
-
-      finalizarAguardar();
-      return false;
-    }
-    if (senhaVar != confirmacaoSenhaVar) {
-  alert("As senhas não coincidem!")
-  return false;
+if (
+    nickVar == "" ||
+    emailVar == "" ||
+    emailVar.includes("@") == false ||
+    senhaVar == "" ||
+    senhaVar.length < 8 ||
+    senhaVar == senhaMinuscula || 
+    (!senhaVar.includes("@") &&
+    !senhaVar.includes("#") &&
+    !senhaVar.includes("$") &&
+    !senhaVar.includes("%") &&
+    !senhaVar.includes("&") &&
+    !senhaVar.includes("*")) || 
+    confirmacaoSenhaVar == ""
+) {
+    alert("Preencha os campos corretamente!");
+    finalizarAguardar();
+    return false;
 }
+
+if (senhaVar != confirmacaoSenhaVar) {
+    alert("As senhas não coincidem!");
+    return false;
+}
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -122,7 +126,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.htlm";
+            window.location = "login.html";
           }, "2000");
 
           limparFormulario();
