@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <title>QUIZ</title>
+</head>
+<body onload="onloadEsconder(), onloadEsconder2(),onloadEsconder3(),onloadEsconder4(), onloadEsconder5()">
+<div class="navbar">
+    <div class="navbar-logo">
+        <img src="https://cdn2.steamgriddb.com/icon/7c6b0d1c14045bc7252a55515366ae4b.png" alt="">
+        <h3>Diario de um pinguin</h3> 
+    </div>
+    <div class="navbar-lista">
+        <ul>
+            <li><a href="index.html" style="color: inherit; text-decoration: none;">home</a></li>
+            <li><a href="personagens.html" style="color: inherit; text-decoration: none;">Personagens</a></li>
+            <li><a href="epf.html" style="color: inherit; text-decoration: none;">EPF</a></li>
+            <li><a href="comunidade.html" style="color: inherit; text-decoration: none;">Comunidade</a></li>
+            <li><a href="quizes.html" style="color: inherit; text-decoration: none;">Quizes</a></li>
+            <li><a href="login.html" style="color: inherit; text-decoration: none;">Login</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Explorador da Ilha – O Grande Desafio</h3>
+        <img src="https://static.wikitide.net/cpfanonwiki/thumb/7/70/LORD_HAVE_MERCY.png/500px-LORD_HAVE_MERCY.png" alt="">
+    </div>
+    <div class="texto-meio-1">
+       <br> <br> <p>Será que você realmente conhece cada canto da ilha? Teste seus conhecimentos sobre lugares, histórias e segredos escondidos.</p> <br> <br>
+       <div id="pontuacaoEJogo">
+        <button class="botao_quiz" id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+
+        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+            <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
+                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
+            </div>
+            <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
+                    <span id="spanPontuacaoFinal">***</span>
+                </span>
+                <span id="msgFinal" class="width-fit-content">***</span>
+            </div>
+        </div>
+
+        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+            <div id="infoQuestao" class="padding-8">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                    questões.</span>
+            </div>
+
+            <div id="perguntaDaQuestaoAtual" class="padding-8">
+                <span id="spanQuestaoExibida" class="text-bold"></span>
+            </div>
+
+            <div id="infoAlternativas" class="padding-8">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+
+            <div id="opcoes" class="flex-colunar padding-8">
+                <span>
+                    <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                    <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                </span>
+                <span>
+                    <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                    <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                </span>
+                <span>
+                    <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                    <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                </span>
+                <span>
+                    <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                    <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                </span>
+            </div>
+
+            <div id="botoes" class="flex-colunar padding-8">
+                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
+                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+            </div>
+
+        </div>
+    </div>
+            </div>
+</div>
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Heróis da Ilha – Quanto você conhece os personagens de Club Penguin?</h3>
+        <img src="https://static.wikia.nocookie.net/clubpenguinbrasil/images/7/75/Famosos.png/revision/latest?cb=20220107002458&path-prefix=pt-br" alt="">
+    </div>
+    <div class="texto-meio-1">
+       <br> <br> <p>Os moradores da ilha são cheios de história, personalidade e segredos.
+                    De cientistas brilhantes a aventureiros destemidos, passando por músicos, agentes secretos e até inventores malucos…
+                    Será que você realmente conhece todos eles?
+                    Prove que você é um verdadeiro especialista em Club Penguin neste quiz especial sobre os personagens mais icônicos da ilha!</p> <br> <br>
+       
+       <div id="pontuacaoEJogo2">
+        <button class="botao_quiz" id="btnIniciarQuiz2" onclick="iniciarQuiz2()">INICIAR QUIZ</button>
+
+        <div id="pontuacao2" class="flex-colunar width-fit-content border-primary">
+            <div id="pontuacaoDuranteJogo2" class="flex-colunar padding-8">
+                <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas2"></span></span>
+                <span class="width-fit-content">Quantidade de erros: <span id="spanErradas2"></span></span>
+            </div>
+            <div id="pontuacaoFinalJogo2" class="flex-colunar padding-8">
+                <span id="pontuacaoFinal2" class="width-fit-content">Pontuação Final:
+                    <span id="spanPontuacaoFinal2">***</span>
+                </span>
+                <span id="msgFinal2" class="width-fit-content">***</span>
+            </div>
+        </div>
+
+        <div id="jogo2" class="width-fit-content flex-colunar border-secondary">
+
+            <div id="infoQuestao2" class="padding-8">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual2"></span> de <span id="qtdQuestoes2"></span>
+                    questões.</span>
+            </div>
+
+            <div id="perguntaDaQuestaoAtual2" class="padding-8">
+                <span id="spanQuestaoExibida2" class="text-bold"></span>
+            </div>
+
+            <div id="infoAlternativas2" class="padding-8">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+
+            <div id="opcoes2" class="flex-colunar padding-8">
+                <span>
+                    <input type="radio" id="primeiraOpcao2" name="option2" class="radio" value="alternativaA" />
+                    <label for="primeiraOpcao2" class="option" id="labelOpcaoUm2"></label>
+                </span>
+                <span>
+                    <input type="radio" id="segundaOpcao2" name="option2" class="radio" value="alternativaB" />
+                    <label for="segundaOpcao2" class="option" id="labelOpcaoDois2"></label>
+                </span>
+                <span>
+                    <input type="radio" id="terceiraOpcao2" name="option2" class="radio" value="alternativaC" />
+                    <label for="terceiraOpcao2" class="option" id="labelOpcaoTres2"></label>
+                </span>
+                <span>
+                    <input type="radio" id="quartaOpcao2" name="option2" class="radio" value="alternativaD" />
+                    <label for="quartaOpcao2" class="option" id="labelOpcaoQuatro2"></label>
+                </span>
+            </div>
+
+            <div id="botoes2" class="flex-colunar padding-8">
+                <button onclick="submeter2()" id="btnSubmeter2">Submeter resposta</button>
+                <button onclick="avancar2()" id="btnProx2" disabled>Avançar para próxima questão</button>
+                <button onclick="tentarNovamente2()" id="btnTentarNovamente2" disabled>Tentar novamente</button>
+            </div>
+
+        </div>
+    </div>
+            </div>
+</div>
+
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Missões da EPF – O Desafio Secreto</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoX2OkZ4_w9y7eXQT2nknEUA17bWO-vP28w&s" alt="">
+    </div>
+
+    <div class="texto-meio-1">
+        <br><br>
+        <p>Mostre que você realmente é um agente de elite! Teste seus conhecimentos sobre as missões, operações e acontecimentos mais importantes da EPF em Club Penguin. Você lembra quem sabotou o quê? Qual missão marcou a história? Só os verdadeiros agentes passam!</p>
+        <br><br>
+
+        <div id="pontuacao3" class="flex-colunar width-fit-content border-primary">
+            <div id="pontuacaoDuranteJogo3" class="flex-colunar padding-8">
+                <span>Quantidade de acertos: <span id="spanCertas3"></span></span>
+                <span>Quantidade de erros: <span id="spanErradas3"></span></span>
+            </div>
+
+            <div id="pontuacaoFinalJogo3" class="flex-colunar padding-8">
+                <span>Pontuação Final: <span id="spanPontuacaoFinal3">***</span></span>
+                <span id="msgFinal3">***</span>
+            </div>
+        </div>
+
+        <button class="botao_quiz" id="btnIniciarQuiz3" onclick="iniciarQuiz3()">INICIAR QUIZ</button>
+
+        <div id="jogo3" class="width-fit-content flex-colunar border-secondary">
+
+            <div id="infoQuestao3" class="padding-8">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual3"></span> de <span id="qtdQuestoes3"></span></span>
+            </div>
+
+            <div id="perguntaDaQuestaoAtual3" class="padding-8">
+                <span id="spanQuestaoExibida3" class="text-bold"></span>
+            </div>
+
+            <div id="infoAlternativas3" class="padding-8">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+
+            <div id="opcoes3" class="flex-colunar padding-8">
+                
+                <span>
+                    <input type="radio" id="primeiraOpcao3" name="option3" class="radio" value="alternativaA" />
+                    <label for="primeiraOpcao3" id="labelOpcaoUm3"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="segundaOpcao3" name="option3" class="radio" value="alternativaB" />
+                    <label for="segundaOpcao3" id="labelOpcaoDois3"></label>
+                </span>
+                <span>
+                    <img src="" alt="" width="100px">
+                    <input type="radio" id="terceiraOpcao3" name="option3" class="radio" value="alternativaC" />
+                    <label for="terceiraOpcao3" id="labelOpcaoTres3"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="quartaOpcao3" name="option3" class="radio" value="alternativaD" />
+                    <label for="quartaOpcao3" id="labelOpcaoQuatro3"></label>
+                </span>
+            </div>
+
+            <div id="botoes3" class="flex-colunar padding-8">
+                <button id="btnSubmeter3" onclick="submeter3()">Submeter resposta</button>
+                <button id="btnProx3" onclick="avancar3()" disabled>Avançar</button>
+                <button id="btnTentarNovamente3" onclick="tentarNovamente3()" disabled>Tentar novamente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Descubra Sua Personalidade na EPF</h3>
+        <img src="https://sploshjnr.home.blog/wp-content/uploads/2020/06/psa-missions-stampbook-image-2.png" alt="" width="400px">
+    </div>
+
+    <div class="texto-meio-1">
+        <br><br>
+        <p>Responda às perguntas e descubra qual tipo de agente da Elite Penguin Force você seria!</p>
+        <br><br>
+
+        <div id="pontuacao4" class="flex-colunar width-fit-content border-primary">
+            <div id="pontuacaoDuranteJogo4" class="flex-colunar padding-8">
+                <span class="width-fit-content">Pontuação das personalidades será calculada ao final.</span>
+            </div>
+
+            <div id="pontuacaoFinalJogo4" class="flex-colunar padding-8">
+                <span id="pontuacaoFinal4" class="width-fit-content">
+                    Resultado Final: <span id="spanPontuacaoFinal4">***</span>
+                </span>
+                <span id="msgFinal4" class="width-fit-content">***</span>
+            </div>
+        </div>
+
+        <div id="pontuacaoEJogo4">
+            <button class="botao_quiz" id="btnIniciarQuiz4" onclick="iniciarQuiz4()">INICIAR QUIZ</button>
+
+            <div id="jogo4" class="width-fit-content flex-colunar border-secondary">
+
+                <div id="infoQuestao4" class="padding-8">
+                    <span>Questão atual: 
+                        <span id="spanNumeroDaQuestaoAtual4"></span> 
+                        de 
+                        <span id="qtdQuestoes4"></span>
+                        questões.
+                    </span>
+                </div>
+
+                <div id="perguntaDaQuestaoAtual4" class="padding-8">
+                    <span id="spanQuestaoExibida4" class="text-bold"></span>
+                </div>
+
+                <div id="infoAlternativas4" class="padding-8">
+                    <span><em>Escolha uma opção dentre as abaixo:</em></span>
+                </div>
+
+                <div id="opcoes4" class="flex-colunar padding-8">
+                    <span>
+                        <input type="radio" id="primeiraOpcao4" name="option4" class="radio" value="alternativaA" />
+                        <label for="primeiraOpcao4" class="option" id="labelOpcaoUm4"></label>
+                    </span>
+
+                    <span>
+                        <input type="radio" id="segundaOpcao4" name="option4" class="radio" value="alternativaB" />
+                        <label for="segundaOpcao4" class="option" id="labelOpcaoDois4"></label>
+                    </span>
+
+                    <span>
+                        <input type="radio" id="terceiraOpcao4" name="option4" class="radio" value="alternativaC" />
+                        <label for="terceiraOpcao4" class="option" id="labelOpcaoTres4"></label>
+                    </span>
+
+                    <span>
+                        <input type="radio" id="quartaOpcao4" name="option4" class="radio" value="alternativaD" />
+                        <label for="quartaOpcao4" class="option" id="labelOpcaoQuatro4"></label>
+                    </span>
+                </div>
+
+                <div id="botoes4" class="flex-colunar padding-8">
+                    <button onclick="submeter4()" id="btnSubmeter4">Submeter resposta</button>
+                    <button onclick="avancar4()" id="btnProx4" disabled>Avançar para próxima questão</button>
+                    <button onclick="tentarNovamente4()" id="btnTentarNovamente4" disabled>Tentar novamente</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Descubra qual Puffle combina com você!</h3>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/8/81/Muitos_pafaus.png/revision/latest?cb=20140923183018&path-prefix=pt-br" alt="">
+    </div>
+    <div class="texto-meio-1">
+       <br> <br> <p>Responda às perguntas e descubra qual Puffle combina com você!</p> <br> <br>
+       <div id="pontuacao5" class="flex-colunar width-fit-content border-primary">
+        <div id="pontuacaoDuranteJogo5" class="flex-colunar padding-8">
+            <span class="width-fit-content">Pontuação dos perfis será calculada ao final.</span>
+        </div>
+
+        <div id="pontuacaoFinalJogo5" class="flex-colunar padding-8">
+            <span id="pontuacaoFinal5" class="width-fit-content">
+                Resultado Final: <span id="spanPontuacaoFinal5">***</span>
+            </span>
+            <span id="msgFinal5" class="width-fit-content">***</span>
+        </div>
+    </div>
+
+    <div id="pontuacaoEJogo5">
+        <button class="botao_quiz" id="btnIniciarQuiz5" onclick="iniciarQuiz5()">INICIAR QUIZ</button>
+
+        <div id="jogo5" class="width-fit-content flex-colunar border-secondary">
+
+            <div id="infoQuestao5" class="padding-8">
+                <span>Questão atual: 
+                    <span id="spanNumeroDaQuestaoAtual5"></span> 
+                    de 
+                    <span id="qtdQuestoes5"></span>
+                    questões.
+                </span>
+            </div>
+
+            <div id="perguntaDaQuestaoAtual5" class="padding-8">
+                <span id="spanQuestaoExibida5" class="text-bold"></span>
+            </div>
+
+            <div id="infoAlternativas5" class="padding-8">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+
+            <div id="opcoes5" class="flex-colunar padding-8">
+                <span>
+                    <input type="radio" id="primeiraOpcao5" name="option5" class="radio" value="alternativaA" />
+                    <label for="primeiraOpcao5" class="option" id="labelOpcaoUm5"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="segundaOpcao5" name="option5" class="radio" value="alternativaB" />
+                    <label for="segundaOpcao5" class="option" id="labelOpcaoDois5"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="terceiraOpcao5" name="option5" class="radio" value="alternativaC" />
+                    <label for="terceiraOpcao5" class="option" id="labelOpcaoTres5"></label>
+                </span>
+
+                <span>
+                    <input type="radio" id="quartaOpcao5" name="option5" class="radio" value="alternativaD" />
+                    <label for="quartaOpcao5" class="option" id="labelOpcaoQuatro5"></label>
+                </span>
+            </div>
+
+            <div id="botoes5" class="flex-colunar padding-8">
+                <button onclick="submeter5()" id="btnSubmeter5">Submeter resposta</button>
+                <button onclick="avancar5()" id="btnProx5" disabled>Avançar para próxima questão</button>
+                <button onclick="tentarNovamente5()" id="btnTentarNovamente5" disabled>Tentar novamente</button>
+            </div>
+
+        </div>
+    </div>
+            </div>
+</div>
+
+<div class="container-meio-1">
+    <div class="titulo-meio-1">
+        <h3>Votação</h3>
+        <img src="https://static.wikitide.net/cpfanonwiki/thumb/7/70/LORD_HAVE_MERCY.png/500px-LORD_HAVE_MERCY.png" alt="">
+    </div>
+    <div class="texto-meio-1">
+       <br> <br> <p>Vote em seus puffles, lugares e personagens favoritos!</p> <br> <br>
+       <button class="botao_quiz" onclick="votacao()">Iniciar votação</button>
+            </div>
+</div>
+</body>
+<script>
+    const listaDeQuestoes = [
+
+        {
+            pergunta: "Qual é o nome da montanha onde os pinguins fazem snowboard?",
+            alternativaA: "Pico Gelado",
+            alternativaB: "Montanha Nevada",
+            alternativaC: "Morro Congelado",
+            alternativaD: "Ice Hill",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Onde fica localizada a Pizzaria do Club Penguin?",
+            alternativaA: "No Forte Nevado",
+            alternativaB: "No Centro (Town)",
+            alternativaC: "Na Plazas",
+            alternativaD: "Na Praia",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Qual é o nome do vulcão onde os Ninjas de Fogo treinam?",
+            alternativaA: "Montanha Flamejante",
+            alternativaB: "Vulcão do Dojo",
+            alternativaC: "Pico do Fogo",
+            alternativaD: "Caverna Vulcânica",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Quem é o inventor famoso da ilha?",
+            alternativaA: "Rookie",
+            alternativaB: "Sensei",
+            alternativaC: "Gary",
+            alternativaD: "Jet Pack Guy",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "Qual é o pet mais famoso e querido da ilha?",
+            alternativaA: "Puffles",
+            alternativaB: "Waddles",
+            alternativaC: "Snowpets",
+            alternativaD: "Ice Pups",
+            alternativaCorreta: "alternativaA"
+        },
+
+        {
+            pergunta: "Qual mini-jogo do Café envolvia bater em sacos de grãos?",
+            alternativaA: "Ice Fishing",
+            alternativaB: "Bean Counters",
+            alternativaC: "Smoothie Smash",
+            alternativaD: "Sled Racing",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Quem é o líder dos ninjas no Dojo?",
+            alternativaA: "Herbert",
+            alternativaB: "Sensei",
+            alternativaC: "Gariwald",
+            alternativaD: "Tia Arctic",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Onde fica o famoso Iceberg?",
+            alternativaA: "Perto da Mina",
+            alternativaB: "Em área isolada no mapa",
+            alternativaC: "Ao lado da Pizzaria",
+            alternativaD: "No subsolo",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Qual é o jornal oficial da ilha?",
+            alternativaA: "Penguin Times",
+            alternativaB: "Ilha News",
+            alternativaC: "The EPF Report",
+            alternativaD: "Club Penguin News",
+            alternativaCorreta: "alternativaD"
+        },
+
+        {
+            pergunta: "Quem é o principal vilão da ilha?",
+            alternativaA: "Klutzy",
+            alternativaB: "Herbert P. Bear",
+            alternativaC: "Protobot",
+            alternativaD: "DJ Maxx",
+            alternativaCorreta: "alternativaB"
+        },
+
+    ]
+    
+    let numeroDaQuestaoAtual = 0
+    let pontuacaoFinal = 0
+    let tentativaIncorreta = 0
+    let certas = 0
+    let erradas = 0
+    let quantidadeDeQuestoes = listaDeQuestoes.length
+    function onloadEsconder() {
+        document.getElementById('pontuacao').style.display = "none"
+        document.getElementById('jogo').style.display = "none"
+    }
+
+    function iniciarQuiz() {
+        document.getElementById('pontuacao').style.display = "flex"
+        document.getElementById('jogo').style.display = "flex"
+        document.getElementById('btnIniciarQuiz').style.display = "none"
+
+        document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
+
+        preencherHTMLcomQuestaoAtual(0)
+
+        btnSubmeter.disabled = false
+        btnProx.disabled = true
+
+        btnTentarNovamente.disabled = true
+    }
+
+    function preencherHTMLcomQuestaoAtual(index) {
+        habilitarAlternativas(true)
+        const questaoAtual = listaDeQuestoes[index]
+        numeroDaQuestaoAtual = index
+        console.log("questaoAtual")
+        console.log(questaoAtual)
+        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 
+        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
+        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
+        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
+        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
+        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
+    }
+
+    function submeter() {
+        const options = document.getElementsByName("option"); 
+
+        let hasChecked = false
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                hasChecked = true
+                break
+            }
+        }
+
+        if (!hasChecked) {
+            alert("Não há alternativas escolhidas. Escolha uma opção.")
+        } else {
+            btnSubmeter.disabled = true
+            btnProx.disabled = false
+
+            habilitarAlternativas(false)
+
+            checarResposta()
+        }
+    }
+
+    function habilitarAlternativas(trueOrFalse) {
+        primeiraOpcao4.disabled = !trueOrFalse;
+
+        primeiraOpcao.disabled = opcaoEscolhida
+        segundaOpcao.disabled = opcaoEscolhida
+        terceiraOpcao.disabled = opcaoEscolhida
+        quartaOpcao.disabled = opcaoEscolhida
+
+    }
+
+    function avancar() {
+        btnProx.disabled = true
+        btnSubmeter.disabled = false
+
+        desmarcarRadioButtons()
+
+        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
+            alert("Atenção... a próxima é a ultima questão!")
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+        } else {
+            finalizarJogo()
+        }
+        limparCoresBackgroundOpcoes()
+    }
+
+    function tentarNovamente() {
+        // atualiza a página
+        window.location.reload()
+    }
+
+    function checarResposta() {
+        const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] 
+        const respostaQuestaoAtual = questaoAtual.alternativaCorreta 
+
+        const options = document.getElementsByName("option"); 
+
+        let alternativaCorreta = null 
+
+        options.forEach((option) => {
+            if (option.value === respostaQuestaoAtual) {
+                console.log("alternativaCorreta está no componente: " + alternativaCorreta)
+                alternativaCorreta = option.labels[0].id
+            }
+        })
+
+    
+        options.forEach((option) => {
+            if (option.checked === true && option.value === respostaQuestaoAtual) {
+                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                pontuacaoFinal++
+                certas++
+                document.getElementById("spanCertas").innerHTML = certas
+                numeroDaQuestaoAtual++
+            } else if (option.checked && option.value !== respostaQuestaoAtual) {
+                const wrongLabelId = option.labels[0].id
+
+                document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
+                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                tentativaIncorreta++
+                erradas++
+                document.getElementById("spanErradas").innerHTML = erradas
+                numeroDaQuestaoAtual++
+            }
+        })
+    }
+
+    function limparCoresBackgroundOpcoes() {
+        const options = document.getElementsByName("option");
+        options.forEach((option) => {
+            document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
+            document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
+        })
+    }
+
+    function desmarcarRadioButtons() {
+        const options = document.getElementsByName("option");
+        for (let i = 0; i < options.length; i++) {
+            options[i].checked = false;
+        }
+    }
+
+    function finalizarJogo() {
+        let textoParaMensagemFinal = null
+        let classComCoresParaMensagemFinal = null
+        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
+
+        if (porcentagemFinalDeAcertos <= 0.3) {
+            textoParaMensagemFinal = "Poxa não foi dessa vez...Pinguine mais pela ilha e volte!"
+            classComCoresParaMensagemFinal = "text-danger-with-bg"
+        }
+        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
+            textoParaMensagemFinal = "Foi quase!! tente novamente!"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+        else if (porcentagemFinalDeAcertos >= 0.9) {
+            textoParaMensagemFinal = "Parabens!! Você ja pode ser um guia de turismo!"
+            classComCoresParaMensagemFinal = "text-success-with-bg"
+        }
+
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+
+
+        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
+
+        document.getElementById('jogo').classList.add("text-new-gray") 
+
+        btnProx.disabled = true
+        btnSubmeter.disabled = true
+        // btnConcluir.disabled = true
+        btnTentarNovamente.disabled = false
+
+    }
+
+    // quiz 2 
+const listaDeQuestoes2 = [
+
+   {
+    pergunta: "Quem é o famoso cientista da ilha conhecido por suas invenções?",
+    alternativaA: "Rockhopper",
+    alternativaB: "Gary",
+    alternativaC: "Sensei",
+    alternativaD: "Rookie",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual personagem é o capitão pirata dono do navio Migrator?",
+    alternativaA: "Gary",
+    alternativaB: "Jet Pack Guy",
+    alternativaC: "Rockhopper",
+    alternativaD: "Franky",
+    alternativaCorreta: "alternativaC"
+},
+
+{
+    pergunta: "Quem é o mestre do Card-Jitsu e treinador de ninjas?",
+    alternativaA: "Sensei",
+    alternativaB: "Cadence",
+    alternativaC: "Gary",
+    alternativaD: "Dot",
+    alternativaCorreta: "alternativaA"
+},
+
+{
+    pergunta: "Qual personagem é DJ, dançarina e estrela da Casa Noturna?",
+    alternativaA: "Tia Arctic",
+    alternativaB: "Cadence",
+    alternativaC: "Dot",
+    alternativaD: "Penny",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Quem é a editora-chefe do Club Penguin Times e líder do EPF?",
+    alternativaAC: "Cadence",
+    alternativaB: "Aunt Arctic",
+    alternativaC: "Dot",
+    alternativaD: "Sensei",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual é o vilão mais famoso da ilha e inimigo dos pinguins?",
+    alternativaA: "Rookie",
+    alternativaB: "Herbert P. Bear",
+    alternativaC: "Protobot",
+    alternativaD: "Gariwald",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual agente secreto é conhecido por ser atrapalhado e engraçado?",
+    alternativaA: "Jet Pack Guy",
+    alternativaB: "Franky",
+    alternativaC: "Rookie",
+    alternativaD: "Rockhopper",
+    alternativaCorreta: "alternativaC"
+},
+
+{
+    pergunta: "Qual pinguim é mestre em disfarces e furtividade?",
+    alternativaA: "Dot",
+    alternativaB: "Sensei",
+    alternativaC: "Franky",
+    alternativaD: "Tia Arctic",
+    alternativaCorreta: "alternativaA"
+},
+
+{
+    pergunta: "Quem é o guitarrista principal da Penguin Band?",
+    alternativaA: "Stompin’ Bob",
+    alternativaB: "G Billy",
+    alternativaC: "Franky",
+    alternativaD: "Cadence",
+    alternativaCorreta: "alternativaA"
+},
+
+{
+    pergunta: "Quem é o agente conhecido por usar uma mochila a jato?",
+    alternativaA: "Jet Pack Guy",
+    alternativaB: "Rookie",
+    alternativaC: "Gary",
+    alternativaD: "Rockhopper",
+    alternativaCorreta: "alternativaA"
+},
+
+
+]
+
+// variáveis globais    
+let numeroDaQuestaoAtual2 = 0
+let pontuacaoFinal2 = 0
+let tentativaIncorreta2 = 0
+let certas2 = 0
+let erradas2 = 0
+let quantidadeDeQuestoes2 = listaDeQuestoes2.length
+
+function onloadEsconder2() {
+    document.getElementById('pontuacao2').style.display = "none"
+    document.getElementById('jogo2').style.display = "none"
+}
+
+function iniciarQuiz2() {
+    document.getElementById('pontuacao2').style.display = "flex"
+    document.getElementById('jogo2').style.display = "flex"
+    document.getElementById('btnIniciarQuiz2').style.display = "none"
+
+    document.getElementById('qtdQuestoes2').innerHTML = quantidadeDeQuestoes2
+
+    preencherHTMLcomQuestaoAtual2(0)
+
+    btnSubmeter2.disabled = false
+    btnProx2.disabled = true
+    btnTentarNovamente2.disabled = true
+}
+
+function preencherHTMLcomQuestaoAtual2(index) {
+    habilitarAlternativas2(true)
+    const questaoAtual = listaDeQuestoes2[index]
+    numeroDaQuestaoAtual2 = index
+
+    document.getElementById("spanNumeroDaQuestaoAtual2").innerHTML = Number(index) + 1
+    document.getElementById("spanQuestaoExibida2").innerHTML = questaoAtual.pergunta
+    document.getElementById("labelOpcaoUm2").innerHTML = questaoAtual.alternativaA
+    document.getElementById("labelOpcaoDois2").innerHTML = questaoAtual.alternativaB
+    document.getElementById("labelOpcaoTres2").innerHTML = questaoAtual.alternativaC
+    document.getElementById("labelOpcaoQuatro2").innerHTML = questaoAtual.alternativaD
+}
+
+function submeter2() {
+    const options = document.getElementsByName("option2")
+
+    let hasChecked = false
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            hasChecked = true
+            break
+        }
+    }
+
+    if (!hasChecked) {
+        alert("Não há alternativas escolhidas. Escolha uma opção.")
+    } else {
+        btnSubmeter2.disabled = true
+        btnProx2.disabled = false
+
+        habilitarAlternativas2(false)
+
+        checarResposta2()
+    }
+}
+
+function habilitarAlternativas2(trueOrFalse) {
+    primeiraOpcao4.disabled = !trueOrFalse;
+
+    primeiraOpcao2.disabled = opcaoEscolhida
+    segundaOpcao2.disabled = opcaoEscolhida
+    terceiraOpcao2.disabled = opcaoEscolhida
+    quartaOpcao2.disabled = opcaoEscolhida
+}
+
+function avancar2() {
+    btnProx2.disabled = true
+    btnSubmeter2.disabled = false
+
+    desmarcarRadioButtons2()
+
+    if (numeroDaQuestaoAtual2 < quantidadeDeQuestoes2 - 1) {
+        preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
+    } else if (numeroDaQuestaoAtual2 == quantidadeDeQuestoes2 - 1) {
+        alert("Atenção... a próxima é a ultima questão!")
+        preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
+    } else {
+        finalizarJogo2()
+    }
+    limparCoresBackgroundOpcoes2()
+}
+
+function tentarNovamente2() {
+    window.location.reload()
+}
+
+function checarResposta2() {
+
+    const questaoAtual = listaDeQuestoes2[numeroDaQuestaoAtual2]
+    const respostaQuestaoAtual = questaoAtual.alternativaCorreta
+
+    const options = document.getElementsByName("option2")
+
+    let alternativaCorreta = null
+
+    options.forEach((option) => {
+        if (option.value === respostaQuestaoAtual) {
+            alternativaCorreta = option.labels[0].id
+        }
+    })
+
+    options.forEach((option) => {
+        if (option.checked && option.value === respostaQuestaoAtual) {
+            document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+            pontuacaoFinal2++
+            certas2++
+            document.getElementById("spanCertas2").innerHTML = certas2
+            numeroDaQuestaoAtual2++
+        } else if (option.checked && option.value !== respostaQuestaoAtual) {
+
+            const wrongLabelId = option.labels[0].id
+
+            document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
+            document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+
+            tentativaIncorreta2++
+            erradas2++
+            document.getElementById("spanErradas2").innerHTML = erradas2
+
+            numeroDaQuestaoAtual2++
+        }
+    })
+}
+
+function limparCoresBackgroundOpcoes2() {
+    const options = document.getElementsByName("option2");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
+        document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
+    })
+}
+
+function desmarcarRadioButtons2() {
+    const options = document.getElementsByName("option2");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+function finalizarJogo2() {
+
+    let textoParaMensagemFinal = null
+    let classComCoresParaMensagemFinal = null
+
+    const porcentagemFinalDeAcertos = pontuacaoFinal2 / quantidadeDeQuestoes2
+
+    if (porcentagemFinalDeAcertos <= 0.3) {
+        textoParaMensagemFinal = "Poxa não foi dessa vez...Pinguine mais pela ilha e volte!"
+        classComCoresParaMensagemFinal = "text-danger-with-bg"
+    }
+    else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
+        textoParaMensagemFinal = "Foi quase!! tente novamente!"
+        classComCoresParaMensagemFinal = "text-warning-with-bg"
+    }
+    else if (porcentagemFinalDeAcertos >= 0.9) {
+        textoParaMensagemFinal = "Parabens!! Você ja pode ser um guia de turismo!"
+        classComCoresParaMensagemFinal = "text-success-with-bg"
+    }
+
+    textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
+
+    document.getElementById('msgFinal2').innerHTML = textoParaMensagemFinal
+    document.getElementById('msgFinal2').classList.add(classComCoresParaMensagemFinal)
+    document.getElementById('spanPontuacaoFinal2').innerHTML = pontuacaoFinal2
+
+    document.getElementById('jogo2').classList.add("text-new-gray")
+
+    btnProx2.disabled = true
+    btnSubmeter2.disabled = true
+    btnTentarNovamente2.disabled = false
+}
+
+// quiz 3 
+const listaDeQuestoes3 = [
+
+  {
+    pergunta: "Quem foi o responsável por destruir o antigo QG da PSA?",
+    alternativaA: "Gary",
+    alternativaB: "Herbert",
+    alternativaC: "Rookie",
+    alternativaD: "Klutzy",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual foi a primeira operação oficial da EPF?",
+    alternativaA: "Operação Blackout",
+    alternativaB: "Operação Submarino",
+    alternativaC: "Operação Hot Sauce",
+    alternativaD: "Operação Apagão",
+    alternativaCorreta: "alternativaC"
+},
+
+{
+    pergunta: "Qual agente é especialista em furtividade dentro da EPF?",
+    alternativaA: "Jet Pack Guy",
+    alternativaB: "Rookie",
+    alternativaC: "Dot",
+    alternativaD: "Gary",
+    alternativaCorreta: "alternativaC"
+},
+
+{
+    pergunta: "Em qual operação Herbert tenta mergulhar a ilha em escuridão permanente?",
+    alternativaA: "Operação Blackout",
+    alternativaB: "Operação Hot Sauce",
+    alternativaC: "Operação Vulcão",
+    alternativaD: "Operação Fóton",
+    alternativaCorreta: "alternativaA"
+},
+
+{
+    pergunta: "Qual operação investigou o desaparecimento misterioso de vários puffles?",
+    alternativaA: "Operação Puffle",
+    alternativaB: "Operação Resgate",
+    alternativaC: "Operação Neve",
+    alternativaD: "Operação Patinete",
+    alternativaCorreta: "alternativaA"
+},
+
+{
+    pergunta: "Quem desenvolve as invenções usadas pelos agentes da EPF?",
+    alternativaA: "Rookie",
+    alternativaB: "Gary",
+    alternativaC: "Sensei",
+    alternativaD: "Tia Arctic",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual operação envolve recuperar o molho de pimenta roubado?",
+    alternativaA: "Operação Picante",
+    alternativaB: "Operação Hot Sauce",
+    alternativaC: "Operação Fogo",
+    alternativaD: "Operação Spice",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual é o nome do urso polar que constantemente ameaça a EPF?",
+    alternativaA: "Rufus",
+    alternativaB: "Herbert P. Bear",
+    alternativaC: "Fluffy",
+    alternativaD: "Gariwald",
+    alternativaCorreta: "alternativaB"
+},
+
+{
+    pergunta: "Qual agente é conhecido por causar confusões, mas ainda assim ajudar?",
+    alternativaA: "Dot",
+    alternativaB: "Gary",
+    alternativaC: "Rookie",
+    alternativaD: "Jet Pack Guy",
+    alternativaCorreta: "alternativaC"
+},
+
+{
+    pergunta: "Qual operação lidou com um ataque massivo que desligou a energia da ilha?",
+    alternativaA: "Operação Apagão",
+    alternativaB: "Operação Blackout",
+    alternativaC: "Operação Luz",
+    alternativaD: "Operação Neve Profunda",
+    alternativaCorreta: "alternativaB"
+},
+
+]
+
+// variáveis globais    
+let numeroDaQuestaoAtual3 = 0
+let pontuacaoFinal3 = 0
+let tentativaIncorreta3 = 0
+let certas3 = 0
+let erradas3 = 0
+let quantidadeDeQuestoes3 = listaDeQuestoes3.length
+
+function onloadEsconder3() {
+    document.getElementById('pontuacao3').style.display = "none"
+    document.getElementById('jogo3').style.display = "none"
+}
+
+function iniciarQuiz3() {
+    document.getElementById('pontuacao3').style.display = "flex"
+    document.getElementById('jogo3').style.display = "flex"
+    document.getElementById('btnIniciarQuiz3').style.display = "none"
+
+    document.getElementById('qtdQuestoes3').innerHTML = quantidadeDeQuestoes3
+
+    preencherHTMLcomQuestaoAtual3(0)
+
+    btnSubmeter3.disabled = false
+    btnProx3.disabled = true
+    btnTentarNovamente3.disabled = true
+}
+
+function preencherHTMLcomQuestaoAtual3(index) {
+    habilitarAlternativas3(true)
+    const questaoAtual = listaDeQuestoes3[index]
+    numeroDaQuestaoAtual3 = index
+
+    document.getElementById("spanNumeroDaQuestaoAtual3").innerHTML = Number(index) + 1
+    document.getElementById("spanQuestaoExibida3").innerHTML = questaoAtual.pergunta
+    document.getElementById("labelOpcaoUm3").innerHTML = questaoAtual.alternativaA
+    document.getElementById("labelOpcaoDois3").innerHTML = questaoAtual.alternativaB
+    document.getElementById("labelOpcaoTres3").innerHTML = questaoAtual.alternativaC
+    document.getElementById("labelOpcaoQuatro3").innerHTML = questaoAtual.alternativaD
+}
+
+function submeter3() {
+
+    const options = document.getElementsByName("option3")
+
+    let hasChecked = false
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            hasChecked = true
+            break
+        }
+    }
+
+    if (!hasChecked) {
+        alert("Não há alternativas escolhidas. Escolha uma opção.")
+    } else {
+        btnSubmeter3.disabled = true
+        btnProx3.disabled = false
+
+        habilitarAlternativas3(false)
+
+        checarResposta3()
+    }
+}
+
+function habilitarAlternativas3(trueOrFalse) {
+    primeiraOpcao4.disabled = !trueOrFalse;
+
+    primeiraOpcao3.disabled = opcaoEscolhida
+    segundaOpcao3.disabled = opcaoEscolhida
+    terceiraOpcao3.disabled = opcaoEscolhida
+    quartaOpcao3.disabled = opcaoEscolhida
+}
+
+function avancar3() {
+
+    btnProx3.disabled = true
+    btnSubmeter3.disabled = false
+
+    desmarcarRadioButtons3()
+
+    if (numeroDaQuestaoAtual3 < quantidadeDeQuestoes3 - 1) {
+        preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
+    } else if (numeroDaQuestaoAtual3 == quantidadeDeQuestoes3 - 1) {
+        alert("Atenção... a próxima é a ultima questão!")
+        preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
+    } else {
+        finalizarJogo3()
+    }
+
+    limparCoresBackgroundOpcoes3()
+}
+
+function tentarNovamente3() {
+    window.location.reload()
+}
+
+function checarResposta3() {
+
+    const questaoAtual = listaDeQuestoes3[numeroDaQuestaoAtual3]
+    const respostaQuestaoAtual = questaoAtual.alternativaCorreta
+
+    const options = document.getElementsByName("option3")
+
+    let alternativaCorreta = null
+
+    options.forEach((option) => {
+        if (option.value === respostaQuestaoAtual) {
+            alternativaCorreta = option.labels[0].id
+        }
+    })
+
+    options.forEach((option) => {
+        if (option.checked && option.value === respostaQuestaoAtual) {
+            document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+            pontuacaoFinal3++
+            certas3++
+            document.getElementById("spanCertas3").innerHTML = certas3
+            numeroDaQuestaoAtual3++
+        } else if (option.checked && option.value !== respostaQuestaoAtual) {
+
+            const wrongLabelId = option.labels[0].id
+
+            document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
+            document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+
+            tentativaIncorreta3++
+            erradas3++
+            document.getElementById("spanErradas3").innerHTML = erradas3
+
+            numeroDaQuestaoAtual3++
+        }
+    })
+}
+
+function limparCoresBackgroundOpcoes3() {
+    const options = document.getElementsByName("option3");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).classList.remove("text-danger-with-bg")
+        document.getElementById(option.labels[0].id).classList.remove("text-success-with-bg")
+    })
+}
+
+function desmarcarRadioButtons3() {
+    const options = document.getElementsByName("option3");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+function finalizarJogo3() {
+
+    let textoParaMensagemFinal = null
+    let classComCoresParaMensagemFinal = null
+
+    const porcentagemFinalDeAcertos = pontuacaoFinal3 / quantidadeDeQuestoes3
+
+    if (porcentagemFinalDeAcertos <= 0.3) {
+        textoParaMensagemFinal = "Poxa não foi dessa vez...Pinguine mais pela ilha e volte!"
+        classComCoresParaMensagemFinal = "text-danger-with-bg"
+    }
+    else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
+        textoParaMensagemFinal = "Foi quase!! tente novamente!"
+        classComCoresParaMensagemFinal = "text-warning-with-bg"
+    }
+    else if (porcentagemFinalDeAcertos >= 0.9) {
+        textoParaMensagemFinal = "Parabens!! Você já conhece muito bem os personagens da ilha!"
+        classComCoresParaMensagemFinal = "text-success-with-bg"
+    }
+
+    textoParaMensagemFinal += "<br> Você acertou " +
+        Math.round((porcentagemFinalDeAcertos) * 100) + "% das questões."
+
+    document.getElementById('msgFinal3').innerHTML = textoParaMensagemFinal
+    document.getElementById('msgFinal3').classList.add(classComCoresParaMensagemFinal)
+    document.getElementById('spanPontuacaoFinal3').innerHTML = pontuacaoFinal3
+
+    document.getElementById('jogo3').classList.add("text-new-gray")
+
+    btnProx3.disabled = true
+    btnSubmeter3.disabled = true
+    btnTentarNovamente3.disabled = false
+}
+
+
+// quiz 4
+const listaDeQuestoes4 = [
+
+   {
+    pergunta: "Se você chegasse na ilha agora, o que faria primeiro?",
+    alternativaA: "Exploraria todos os cantos da ilha!",
+    alternativaB: "Começaria a inventar algo novo.",
+    alternativaC: "Iria direto ao Dojo treinar.",
+    alternativaD: "Visitava amigos para conversar.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Qual ambiente mais combina com você?",
+    alternativaA: "Um navio cheio de mistérios.",
+    alternativaB: "Um laboratório cheio de ferramentas.",
+    alternativaC: "Um local silencioso onde posso treinar.",
+    alternativaD: "Uma redação tranquila com bons livros.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Qual dessas qualidades mais te descreve?",
+    alternativaA: "Corajoso",
+    alternativaB: "Inventivo",
+    alternativaC: "Disciplinado",
+    alternativaD: "Observador",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Em uma situação inesperada, você...",
+    alternativaA: "Age rápido, sem pensar muito.",
+    alternativaB: "Cria uma solução alternativa e criativa.",
+    alternativaC: "Mantém o foco e lidera o grupo.",
+    alternativaD: "Mantém a calma e avalia tudo com cuidado.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "O que mais te motiva?",
+    alternativaA: "Descobrir algo novo todos os dias.",
+    alternativaB: "Criar coisas que ninguém pensou.",
+    alternativaC: "Treinar e melhorar sempre.",
+    alternativaD: "Ajudar os outros com paciência.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Qual desses papéis você assumiria em um grupo?",
+    alternativaA: "Explorador",
+    alternativaB: "Inventor",
+    alternativaC: "Mestre estrategista",
+    alternativaD: "Conselheiro",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Escolha um passatempo:",
+    alternativaA: "Viajar",
+    alternativaB: "Montar experimentos",
+    alternativaC: "Meditação e treino",
+    alternativaD: "Escrever e ler",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Se um amigo estivesse em perigo, você…",
+    alternativaA: "Correria para salvá-lo!",
+    alternativaB: "Criaria um plano rápido para tirá-lo dali.",
+    alternativaC: "Guiaria todos para agir em equipe.",
+    alternativaD: "Tentaria mantê-lo calmo enquanto busca ajuda.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Qual dessas comidas escolheria?",
+    alternativaA: "Algo diferente e ousado.",
+    alternativaB: "Algo que eu mesmo inventasse.",
+    alternativaC: "Algo simples e equilibrado.",
+    alternativaD: "Algo clássico e reconfortante.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+},
+
+{
+    pergunta: "Como você se sente em relação a desafios?",
+    alternativaA: "Adoro! Me jogo sem medo.",
+    alternativaB: "Encaro criando soluções criativas.",
+    alternativaC: "Uso disciplina e foco.",
+    alternativaD: "Penso com calma e estratégia.",
+    valorA: "aventura",
+    valorB: "criativo",
+    valorC: "lider",
+    valorD: "calmo"
+}
+
+];
+
+
+// variáveis globais    
+let numeroDaQuestaoAtual4 = 0
+let quantidadeDeQuestoes4 = listaDeQuestoes4.length
+let pontuacao = {
+    aventura: 0,
+    criativo: 0,
+    lider: 0,
+    calmo: 0
+};
+
+function onloadEsconder4() {
+    document.getElementById('pontuacao4').style.display = "none"
+    document.getElementById('jogo4').style.display = "none"
+}
+
+function iniciarQuiz4() {
+    document.getElementById('pontuacao4').style.display = "flex"
+    document.getElementById('jogo4').style.display = "flex"
+    document.getElementById('btnIniciarQuiz4').style.display = "none"
+
+    document.getElementById('qtdQuestoes4').innerHTML = quantidadeDeQuestoes4
+
+    preencherHTMLcomQuestaoAtual4(0)
+
+    btnSubmeter4.disabled = true
+    btnProx4.disabled = false
+    btnTentarNovamente4.disabled = true
+}
+
+function preencherHTMLcomQuestaoAtual4(index) {
+    habilitarAlternativas4(true)
+    const questaoAtual = listaDeQuestoes4[index]
+    numeroDaQuestaoAtual4 = index
+
+    document.getElementById("spanNumeroDaQuestaoAtual4").innerHTML = Number(index) + 1
+    document.getElementById("spanQuestaoExibida4").innerHTML = questaoAtual.pergunta
+    document.getElementById("labelOpcaoUm4").innerHTML = questaoAtual.alternativaA
+    document.getElementById("labelOpcaoDois4").innerHTML = questaoAtual.alternativaB
+    document.getElementById("labelOpcaoTres4").innerHTML = questaoAtual.alternativaC
+    document.getElementById("labelOpcaoQuatro4").innerHTML = questaoAtual.alternativaD
+}
+
+function submeter4() {
+    const options = document.getElementsByName("option4")
+
+    let hasChecked = false
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            hasChecked = true
+            break
+        }
+    }
+
+    if (!hasChecked) {
+        alert("Não há alternativas escolhidas. Escolha uma opção.")
+    } else {
+        btnSubmeter4.disabled = true
+        btnProx4.disabled = false
+
+        habilitarAlternativas4(false)
+
+        checarResposta4()
+    }
+}
+
+function habilitarAlternativas4(habilitar) {
+    primeiraOpcao4.disabled = !habilitar;
+    segundaOpcao4.disabled = !habilitar;
+    terceiraOpcao4.disabled = !habilitar;
+    quartaOpcao4.disabled = !habilitar;
+}
+
+
+function avancar4() {
+    btnProx4.disabled = true
+    btnSubmeter4.disabled = false
+
+    desmarcarRadioButtons4()
+    habilitarAlternativas4(true)
+}
+
+function tentarNovamente4() {
+    window.location.reload()
+}
+
+function finalizarJogo4() {
+    document.getElementById('jogo4').style.display = "none";
+
+    const resultadoFinal = Object.entries(pontuacao).sort((a, b) => b[1] - a[1])[0][0];
+
+    let mensagem = "";
+
+    if (resultadoFinal === "aventura") {
+        mensagem = `Você é como o Rockhopper! Corajoso, curioso e sempre pronto para aventuras.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/0/02/CPT_412_Rockhopper_coat.png/revision/latest/scale-to-width-down/1200?cb=20250531155213" alt="">`;
+    }
+    if (resultadoFinal === "criativo") {
+        mensagem = `Você é como o Gary! Criativo, inteligente e sempre inventando algo novo.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/32/Gary_Infobox.png/revision/latest?cb=20240131032144&path-prefix=pt-br" alt="">`;
+    }
+    if (resultadoFinal === "lider") {
+        mensagem = `Você é como o Sensei! Focado, disciplinado e um grande líder.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/8/8a/Sensei_2009.png/revision/latest/scale-to-width/360?cb=20150517232541&path-prefix=pt-br" alt="">`;
+    }
+    if (resultadoFinal === "calmo") {
+         mensagem = `Você é como a Tia Arctic! Calmo, sábio e sempre prestativo.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguinbrasil/images/2/22/Tia_Arctic.png/revision/latest?cb=20220112002855&path-prefix=pt-br" alt="">`;
+    }
+
+    document.getElementById("pontuacao4").innerHTML = `
+        <h2 style="margin-bottom: 10px;">Resultado do Quiz de Personalidade</h2>
+        <p style="font-size: 20px; margin-bottom: 20px;">${mensagem}</p>
+        <button onclick="tentarNovamente4()">Tentar novamente</button>
+    `;
+
+    document.getElementById('pontuacao4').style.display = "flex";
+}
+
+
+function checarResposta4() {
+    const options = document.getElementsByName("option4");
+    const questaoAtual = listaDeQuestoes4[numeroDaQuestaoAtual4];
+
+    let valorEscolhido = null;
+
+    options.forEach((option) => {
+        if (option.checked) {
+            if (option.value === "alternativaA") valorEscolhido = questaoAtual.valorA;
+            if (option.value === "alternativaB") valorEscolhido = questaoAtual.valorB;
+            if (option.value === "alternativaC") valorEscolhido = questaoAtual.valorC;
+            if (option.value === "alternativaD") valorEscolhido = questaoAtual.valorD;
+        }
+    });
+
+    if (!valorEscolhido) {
+        alert("Por favor, selecione uma resposta!");
+        return;
+    }
+
+    pontuacao[valorEscolhido]++;
+
+    numeroDaQuestaoAtual4++;
+
+    if (numeroDaQuestaoAtual4 < quantidadeDeQuestoes4) {
+        preencherHTMLcomQuestaoAtual4(numeroDaQuestaoAtual4);
+    } else {
+        finalizarJogo4();
+    }
+}
+
+
+function desmarcarRadioButtons4() {
+    const options = document.getElementsByName("option4");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+
+// quiz 5 
+const listaDeQuestoes5 = [
+
+{
+    pergunta: "Qual dessas atividades você mais gosta?",
+    alternativaA: "Explorar e correr por aí!",
+    alternativaB: "Criar coisas novas e mexer com ferramentas.",
+    alternativaC: "Treinar e se dedicar com disciplina.",
+    alternativaD: "Relaxar e observar tudo com calma.",
+    valorA: "puffle_vermelho",
+    valorB: "puffle_amarelo",
+    valorC: "puffle_preto",
+    valorD: "puffle_azul"
+},
+
+{
+    pergunta: "Qual ambiente combina mais com você?",
+    alternativaA: "Lugares cheios de energia!",
+    alternativaB: "Ateliês, oficinas e lugares criativos.",
+    alternativaC: "Ambientes silenciosos e focados.",
+    alternativaD: "Locais tranquilos e aconchegantes.",
+    valorA: "puffle_vermelho",
+    valorB: "puffle_amarelo",
+    valorC: "puffle_preto",
+    valorD: "puffle_azul"
+},
+
+{
+    pergunta: "Qual dessas qualidades te define melhor?",
+    alternativaA: "Aventureiro",
+    alternativaB: "Artístico",
+    alternativaC: "Intenso",
+    alternativaD: "Calmo",
+    valorA: "puffle_vermelho",
+    valorB: "puffle_amarelo",
+    valorC: "puffle_preto",
+    valorD: "puffle_azul"
+},
+
+{
+    pergunta: "Se algo inesperado acontecer...",
+    alternativaA: "Pulo na ação imediatamente!",
+    alternativaB: "Penso em algo criativo para resolver.",
+    alternativaC: "Fico sério e enfrento de forma direta.",
+    alternativaD: "Respiro fundo e observo antes de agir.",
+    valorA: "puffle_vermelho",
+    valorB: "puffle_amarelo",
+    valorC: "puffle_preto",
+    valorD: "puffle_azul"
+},
+
+{
+    pergunta: "O que te motiva?",
+    alternativaA: "Emoção e movimento!",
+    alternativaB: "Criatividade e expressão.",
+    alternativaC: "Foco total e intensidade.",
+    alternativaD: "Conforto e paz.",
+    valorA: "puffle_vermelho",
+    valorB: "puffle_amarelo",
+    valorC: "puffle_preto",
+    valorD: "puffle_azul"
+}
+
+];
+
+let numeroDaQuestaoAtual5 = 0;
+let quantidadeDeQuestoes5 = listaDeQuestoes5.length;
+
+let pontuacao5 = {
+    puffle_vermelho: 0,
+    puffle_amarelo: 0,
+    puffle_preto: 0,
+    puffle_azul: 0
+};
+
+
+function onloadEsconder5() {
+    document.getElementById('pontuacao5').style.display = "none";
+    document.getElementById('jogo5').style.display = "none";
+}
+
+function iniciarQuiz5() {
+    document.getElementById('pontuacao5').style.display = "flex";
+    document.getElementById('jogo5').style.display = "flex";
+    document.getElementById('btnIniciarQuiz5').style.display = "none";
+
+    document.getElementById('qtdQuestoes5').innerHTML = quantidadeDeQuestoes5;
+
+    preencherHTMLcomQuestaoAtual5(0);
+
+    btnSubmeter5.disabled = true;
+    btnProx5.disabled = false;
+    btnTentarNovamente5.disabled = true;
+}
+
+function preencherHTMLcomQuestaoAtual5(index) {
+    habilitarAlternativas5(true);
+    const questaoAtual = listaDeQuestoes5[index];
+    numeroDaQuestaoAtual5 = index;
+
+    document.getElementById("spanNumeroDaQuestaoAtual5").innerHTML = Number(index) + 1;
+    document.getElementById("spanQuestaoExibida5").innerHTML = questaoAtual.pergunta;
+    document.getElementById("labelOpcaoUm5").innerHTML = questaoAtual.alternativaA;
+    document.getElementById("labelOpcaoDois5").innerHTML = questaoAtual.alternativaB;
+    document.getElementById("labelOpcaoTres5").innerHTML = questaoAtual.alternativaC;
+    document.getElementById("labelOpcaoQuatro5").innerHTML = questaoAtual.alternativaD;
+}
+
+function submeter5() {
+    const options = document.getElementsByName("option5");
+
+    let hasChecked = false;
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+            hasChecked = true;
+            break;
+        }
+    }
+
+    if (!hasChecked) {
+        alert("Não há alternativas escolhidas. Escolha uma opção.");
+    } else {
+        btnSubmeter5.disabled = true;
+        btnProx5.disabled = false;
+
+        habilitarAlternativas5(false);
+
+        checarResposta5();
+    }
+}
+
+function habilitarAlternativas5(habilitar) {
+    primeiraOpcao5.disabled = !habilitar;
+    segundaOpcao5.disabled = !habilitar;
+    terceiraOpcao5.disabled = !habilitar;
+    quartaOpcao5.disabled = !habilitar;
+}
+
+function avancar5() {
+    btnProx5.disabled = true;
+    btnSubmeter5.disabled = false;
+
+    desmarcarRadioButtons5();
+    habilitarAlternativas5(true);
+}
+
+function tentarNovamente5() {
+    window.location.reload();
+}
+
+function finalizarJogo5() {
+    document.getElementById('jogo5').style.display = "none";
+
+    const resultadoFinal = Object.entries(pontuacao5).sort((a, b) => b[1] - a[1])[0][0];
+
+    let mensagem = "";
+
+    if (resultadoFinal === "puffle_vermelho") {
+        mensagem = `Você seria um Puffle Vermelho! Cheio de energia, aventura e emoção.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/36/Red_Puffle.png" alt="">`;
+    }
+    if (resultadoFinal === "puffle_amarelo") {
+        mensagem = `Você seria um Puffle Amarelo! Criativo, artístico e sempre imaginando algo novo.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/0/05/Yellow_Puffle.png" alt="">`;
+    }
+    if (resultadoFinal === "puffle_preto") {
+        mensagem = `Você seria um Puffle Preto! Intenso, determinado e cheio de atitude.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/e/ef/Black_Puffle.png" alt="">`;
+    }
+    if (resultadoFinal === "puffle_azul") {
+        mensagem = `Você seria um Puffle Azul! Calmo, leal e sempre tranquilo.<br>
+        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/33/Blue_Puffle.png" alt="">`;
+    }
+
+    document.getElementById("pontuacao5").innerHTML = `
+        <h2 style="margin-bottom: 10px;">Resultado do Quiz</h2>
+        <p style="font-size: 20px; margin-bottom: 20px;">${mensagem}</p>
+        <button onclick="tentarNovamente5()">Tentar novamente</button>
+    `;
+
+    document.getElementById('pontuacao5').style.display = "flex";
+}
+
+function checarResposta5() {
+    const options = document.getElementsByName("option5");
+    const questaoAtual = listaDeQuestoes5[numeroDaQuestaoAtual5];
+
+    let valorEscolhido = null;
+
+    options.forEach((option) => {
+        if (option.checked) {
+            if (option.value === "alternativaA") valorEscolhido = questaoAtual.valorA;
+            if (option.value === "alternativaB") valorEscolhido = questaoAtual.valorB;
+            if (option.value === "alternativaC") valorEscolhido = questaoAtual.valorC;
+            if (option.value === "alternativaD") valorEscolhido = questaoAtual.valorD;
+        }
+    });
+
+    if (!valorEscolhido) {
+        alert("Por favor, selecione uma resposta!");
+        return;
+    }
+
+    pontuacao5[valorEscolhido]++;
+
+    numeroDaQuestaoAtual5++;
+
+    if (numeroDaQuestaoAtual5 < quantidadeDeQuestoes5) {
+        preencherHTMLcomQuestaoAtual5(numeroDaQuestaoAtual5);
+    } else {
+        finalizarJogo5();
+    }
+}
+
+function desmarcarRadioButtons5() {
+    const options = document.getElementsByName("option5");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+// votação
+
+const listaVotacao = [
+    {
+        pergunta: "Qual seu puffle favorito?",
+        alternativaA: "Puffle Vermelho",
+        alternativaB: "Puffle Rosa",
+        alternativaC: "Puffle Azul",
+        alternativaD: "Puffle Preto",
+        alternativaE: "Puffle Amarelo",
+        alternativaF: "Puffle Roxo",
+        alternativaG: "Pufffle Branco",
+        alternativaH: "Puffle Laranja",
+        alternativaI: "Puffle Marrom",
+        valorA: "puffle_vermelho",
+        valorB: "puffle_rosa",
+        valorC: "puffle_azul",
+        valorD: "puffle_preto",
+        valorE: "puffle_amarelo",
+        valorF: "puffle_roxo",
+        valorG: "puffle_branco",
+        valorH: "puffle_laranja",
+        valorI: "puffle_marrom"
+    },
+]
+
+function votacao(){
+    
+}
+</script>
+</html>

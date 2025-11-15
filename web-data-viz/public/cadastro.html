@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+</head>
+
+<body onload="listar()">
+<div class="navbar">
+    <div class="navbar-logo">
+        <img src="https://cdn2.steamgriddb.com/icon/7c6b0d1c14045bc7252a55515366ae4b.png" alt="">
+        <h3>Diario de um pinguin</h3> 
+    </div>
+    <div class="navbar-lista">
+        <ul>
+            <li><a href="index.html" style="color: inherit; text-decoration: none;">home</a></li>
+            <li><a href="personagens.html" style="color: inherit; text-decoration: none;">Personagens</a></li>
+            <li><a href="epf.html" style="color: inherit; text-decoration: none;">EPF</a></li>
+            <li><a href="comunidade.html" style="color: inherit; text-decoration: none;">Comunidade</a></li>
+            <li><a href="quizes.html" style="color: inherit; text-decoration: none;">Quizes</a></li>
+            <li><a href="login.html" style="color: inherit; text-decoration: none;">Login</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="titulo-cadastro">
+    <h1>Seja um pinguim</h1>
+</div>
+<div>
+<div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+   </div>
+</div>
+
+
+<div class="container-cadastro">
+    <div id="imagem-esquerda">
+        <img src="https://i.redd.it/a-collection-of-my-favourite-gifs-i-extracted-from-the-club-v0-ivcx6810iigd1.gif?width=1626&auto=webp&s=a883f666bb214060cf8d6593461ac487eb154e29" alt="">
+    </div>
+        <div id="login-direita">
+                <p>Nickname</p> <br>
+                <input id="nick_input" type="text"> <br> <br>
+                <p>Email</p> <br>
+                <input id="email_input" type="email"> <br> <br>
+                <div id="div_mensagem_erro"></div>
+                <p>Senha</p> <br>
+                <input id="senha_input" type="password"> <br> <br>
+                <p>Confirme sua senha</p> <br>
+                <input id="confirmacao_senha_input" type="password"> <br> <br> <br>
+                <button onclick="cadastrar()">Cadastre-se</button>
+        </div>
+</div>
+</div>
+</body>
+
+</html>
+
+<script>
+
+  // Array para armazenar empresas cadastradas para validação de código de ativação 
+  let listaEmpresasCadastradas = [];
+  var listaEspeciais = ['@','#','$','%','&','*'];
+
+  function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nickVar = nick_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var senhaMinuscula = senhavar.toLowerCase()
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+    // Verificando se há algum campo em branco
+    if (
+      nickVar == "" ||
+      (emailVar == "" || emailVar.includes('@.com') == false),
+      (senhaVar == "" ||  senhaVar < 8) || (senhaVar == senhaMinuscula || senhaVar.includes(listaEspeciais) == false),
+      confirmacaoSenhaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      alert("(Mensagem de erro para todos os campos em branco)")
+
+      finalizarAguardar();
+      return false;
+    }
+    if (senhaVar != confirmacaoSenhaVar) {
+  alert("As senhas não coincidem!")
+  return false;
+}
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+      nickServer: nickVar,
+      emailServer: emailVar,
+      senhaServer: senhaVar
+    })
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.htlm";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+</script>
