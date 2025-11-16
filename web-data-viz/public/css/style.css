@@ -8,7 +8,7 @@ body{
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 550px;
+    min-height: 100vh;
     background-image: url(https://wallpapers.com/images/hd/club-penguin-in-winter-environment-q5au3nlmk55c5o8y.jpg);
     background-size: cover;       
     background-position: center;  
@@ -395,3 +395,48 @@ html {
     cursor: pointer;
 }
 /*fim css quizes*/
+
+/* incio css comunidade*/
+.container-mensagem-meio{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 40px;
+    background-color: #0076bc;
+    color: white;
+    margin-top: auto;
+    margin-bottom: 10px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 20px;
+}
+
+.container-mensagem-meio input{
+    width: 600px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.container-mensagem-meio button{
+    width: 200px;
+    height: 30px;
+    background-color: #6eabd8;
+    color: white;
+    border-radius: 10px;
+}
+.container-meio-comunidade{
+    background-color: #add8e6;
+    border-radius: 20px;
+    width: 700px;
+    height: 700px;
+    max-width: 800px;
+    margin: auto;
+    text-align:  end;
+    box-shadow: 0 4px 8px black;
+}
+#div_mensagem{
+    padding: 10%;
+}
+/*fim css comunidade*/

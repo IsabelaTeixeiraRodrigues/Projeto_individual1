@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Comunidade</title>
 </head>
-<body>
+<body class="body_mensagem">
 <div class="navbar">
         <div class="navbar-logo">
             <img src=".//imagens/pinguim navbar.png" alt="">
@@ -23,5 +23,34 @@
             </ul>
         </div>
     </div> 
+
+        <div class="container-meio-comunidade">
+            <div id="div_mensagem"></div>
+        </div>
+        
+            <div class="container-mensagem-meio">
+            <p>Digite sua mensagem</p> <br>
+            <input id="input_mensagem" type="text"> <button onclick="registrar(); enviar()">Enviar</button>
+            </div>
+
 </body>
+
+<script>
+    var listaMensagem = []
+    function registrar(){
+        var mensagem = input_mensagem.value
+        listaMensagem.push(mensagem)
+    }
+
+    function enviar(){
+        var mensagem = input_mensagem.value
+
+        div_mensagem.innerHTML = ""
+
+        for (var i = 0; i < listaMensagem.length; i++) {
+            var mensagem_Atual = listaMensagem[i];
+            div_mensagem.innerHTML += `<p>${mensagem_Atual}</p>`
+}
+    }
+</script>
 </html>
