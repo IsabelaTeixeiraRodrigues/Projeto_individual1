@@ -10,7 +10,7 @@
 <body onload="onloadEsconder(), onloadEsconder2(),onloadEsconder3(),onloadEsconder4(), onloadEsconder5()">
 <div class="navbar">
     <div class="navbar-logo">
-        <img src="https://cdn2.steamgriddb.com/icon/7c6b0d1c14045bc7252a55515366ae4b.png" alt="">
+        <img src="./assets/imgs/index/icon pagina.png" alt="">
         <h3>Diario de um pinguin</h3> 
     </div>
     <div class="navbar-lista">
@@ -28,7 +28,7 @@
 <div class="container-meio-1">
     <div class="titulo-meio-1">
         <h3>Explorador da Ilha – O Grande Desafio</h3>
-        <img src="https://static.wikitide.net/cpfanonwiki/thumb/7/70/LORD_HAVE_MERCY.png/500px-LORD_HAVE_MERCY.png" alt="">
+        <img src="./assets/imgs/QUIZES/ilha.webp" alt="" width="500px">
     </div>
     <div class="texto-meio-1">
        <br> <br> <p>Será que você realmente conhece cada canto da ilha? Teste seus conhecimentos sobre lugares, histórias e segredos escondidos.</p> <br> <br>
@@ -97,7 +97,7 @@
 <div class="container-meio-1">
     <div class="titulo-meio-1">
         <h3>Heróis da Ilha – Quanto você conhece os personagens de Club Penguin?</h3>
-        <img src="https://static.wikia.nocookie.net/clubpenguinbrasil/images/7/75/Famosos.png/revision/latest?cb=20220107002458&path-prefix=pt-br" alt="">
+        <img src="./assets/imgs/QUIZES/penguim-band.png" alt="" width="500px">
     </div>
     <div class="texto-meio-1">
        <br> <br> <p>Os moradores da ilha são cheios de história, personalidade e segredos.
@@ -170,7 +170,7 @@
 <div class="container-meio-1">
     <div class="titulo-meio-1">
         <h3>Missões da EPF – O Desafio Secreto</h3>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoX2OkZ4_w9y7eXQT2nknEUA17bWO-vP28w&s" alt="">
+        <img src="./assets/imgs/QUIZES/epf.jpeg" alt="" width="500px">
     </div>
 
     <div class="texto-meio-1">
@@ -241,7 +241,7 @@
 <div class="container-meio-1">
     <div class="titulo-meio-1">
         <h3>Descubra Sua Personalidade na EPF</h3>
-        <img src="https://sploshjnr.home.blog/wp-content/uploads/2020/06/psa-missions-stampbook-image-2.png" alt="" width="400px">
+        <img src="./assets/imgs/QUIZES/epf-2.png" alt="" width="500px">
     </div>
 
     <div class="texto-meio-1">
@@ -320,7 +320,7 @@
 <div class="container-meio-1">
     <div class="titulo-meio-1">
         <h3>Descubra qual Puffle combina com você!</h3>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/8/81/Muitos_pafaus.png/revision/latest?cb=20140923183018&path-prefix=pt-br" alt="">
+        <img src="./assets/imgs/QUIZES/puffle.png" alt="" width="500px">
     </div>
     <div class="texto-meio-1">
        <br> <br> <p>Responda às perguntas e descubra qual Puffle combina com você!</p> <br> <br>
@@ -390,6 +390,19 @@
         </div>
     </div>
             </div>
+</div>
+
+<div class="rodape">
+    <div class="rodape-lista">
+        <ul>
+            <li><img src="./assets/imgs/index/instagram.webp" alt=""> @DiarioDeUmpInguin_</li>
+            <li><img src="./assets/imgs/index/facebook.png" alt="">DiarioDeUmPinguim</li>
+            <li><img src="./assets/imgs/index/x.webp" alt="">@Diario_Pinguin</li>
+            <li><img src="./assets/imgs/index/github.png" alt="">IsabelaTeixeiraRodrigues</li>
+            <li><img src="./assets/imgs/index/email.png" alt="">Diario_Pinguin@gmail.com</li>
+        </ul>
+    </div>
+    <p>Todos os direitos reservados</p>
 </div>
 </body>
 <script>
@@ -550,15 +563,13 @@
         }
     }
 
-    function habilitarAlternativas(trueOrFalse) {
-        primeiraOpcao4.disabled = !trueOrFalse;
+   function habilitarAlternativas(ativar) {
+    primeiraOpcao.disabled = !ativar;
+    segundaOpcao.disabled = !ativar;
+    terceiraOpcao.disabled = !ativar;
+    quartaOpcao.disabled = !ativar;
+}
 
-        primeiraOpcao.disabled = opcaoEscolhida
-        segundaOpcao.disabled = opcaoEscolhida
-        terceiraOpcao.disabled = opcaoEscolhida
-        quartaOpcao.disabled = opcaoEscolhida
-
-    }
 
     function avancar() {
         btnProx.disabled = true
@@ -826,14 +837,13 @@ function submeter2() {
     }
 }
 
-function habilitarAlternativas2(trueOrFalse) {
-    primeiraOpcao4.disabled = !trueOrFalse;
-
-    primeiraOpcao2.disabled = opcaoEscolhida
-    segundaOpcao2.disabled = opcaoEscolhida
-    terceiraOpcao2.disabled = opcaoEscolhida
-    quartaOpcao2.disabled = opcaoEscolhida
+function habilitarAlternativas2(ativar) {
+    primeiraOpcao2.disabled = !ativar;
+    segundaOpcao2.disabled = !ativar;
+    terceiraOpcao2.disabled = !ativar;
+    quartaOpcao2.disabled = !ativar;
 }
+
 
 function avancar2() {
     btnProx2.disabled = true
@@ -1101,14 +1111,13 @@ function submeter3() {
     }
 }
 
-function habilitarAlternativas3(trueOrFalse) {
-    primeiraOpcao4.disabled = !trueOrFalse;
-
-    primeiraOpcao3.disabled = opcaoEscolhida
-    segundaOpcao3.disabled = opcaoEscolhida
-    terceiraOpcao3.disabled = opcaoEscolhida
-    quartaOpcao3.disabled = opcaoEscolhida
+function habilitarAlternativas3(enabled) {
+    document.getElementById("primeiraOpcao3").disabled = !enabled;
+    document.getElementById("segundaOpcao3").disabled = !enabled;
+    document.getElementById("terceiraOpcao3").disabled = !enabled;
+    document.getElementById("quartaOpcao3").disabled = !enabled;
 }
+
 
 function avancar3() {
 
@@ -1441,19 +1450,19 @@ function finalizarJogo4() {
 
     if (resultadoFinal === "aventura") {
         mensagem = `Você é como o Rockhopper! Corajoso, curioso e sempre pronto para aventuras.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/0/02/CPT_412_Rockhopper_coat.png/revision/latest/scale-to-width-down/1200?cb=20250531155213" alt="">`;
+        <img src="./assets/imgs/personagens/rock.webp" alt="" width="300px">`;
     }
     if (resultadoFinal === "criativo") {
         mensagem = `Você é como o Gary! Criativo, inteligente e sempre inventando algo novo.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/32/Gary_Infobox.png/revision/latest?cb=20240131032144&path-prefix=pt-br" alt="">`;
+        <img src="./assets/imgs/personagens/gary.png" alt="" width="300px">`;
     }
     if (resultadoFinal === "lider") {
         mensagem = `Você é como o Sensei! Focado, disciplinado e um grande líder.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/8/8a/Sensei_2009.png/revision/latest/scale-to-width/360?cb=20150517232541&path-prefix=pt-br" alt="">`;
+        <img src="./assets/imgs/personagens/sensei.png" alt="" width="300px">`;
     }
     if (resultadoFinal === "calmo") {
          mensagem = `Você é como a Tia Arctic! Calmo, sábio e sempre prestativo.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguinbrasil/images/2/22/Tia_Arctic.png/revision/latest?cb=20220112002855&path-prefix=pt-br" alt="">`;
+        <img src="./assets/imgs/personagens/tia-artic.png" alt="" width="300px">`;
     }
 
     document.getElementById("pontuacao4").innerHTML = `
@@ -1665,19 +1674,19 @@ function finalizarJogo5() {
 
     if (resultadoFinal == "puffle_vermelho") {
         mensagem = `Você seria um Puffle Vermelho! Cheio de energia, aventura e emoção.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/36/Red_Puffle.png" alt="">`;
+        <img src="./assets/imgs/personagens/puffle-vermelho.png" alt="" width="300px">`;
     }
     if (resultadoFinal == "puffle_amarelo") {
         mensagem = `Você seria um Puffle Amarelo! Criativo, artístico e sempre imaginando algo novo.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/0/05/Yellow_Puffle.png" alt="">`;
+        <img src="./assets/imgs/personagens/puffle-amarelo.webp" alt="" width="300px">`;
     }
     if (resultadoFinal == "puffle_preto") {
         mensagem = `Você seria um Puffle Preto! Intenso, determinado e cheio de atitude.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/e/ef/Black_Puffle.png" alt="">`;
+        <img src="./assets/imgs/personagens/puffle-preto.webp" alt="" width="300px">`;
     }
     if (resultadoFinal == "puffle_azul") {
         mensagem = `Você seria um Puffle Azul! Calmo, leal e sempre tranquilo.<br>
-        <img src="https://static.wikia.nocookie.net/clubpenguin/images/3/33/Blue_Puffle.png" alt="">`;
+        <img src="./assets/imgs/personagens/puffleAzul.png" alt="" width="300px">`;
     }
 
     document.getElementById("pontuacao5").innerHTML = `
