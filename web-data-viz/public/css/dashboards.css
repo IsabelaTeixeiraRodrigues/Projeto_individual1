@@ -17,12 +17,15 @@ body {
   width: 100%;
   color: rgb(216, 216, 216);
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0076bc;
 }
 
 .dash-right .avisos .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #0076bc;
+  color: black;
 }
 
 .dash-right .avisos .container .div-form {
@@ -44,7 +47,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid #87CEEB;
   background-color: white;
   border-radius: 5px;
 }
@@ -58,7 +61,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #87CEEB;
   width: 120px;
 }
 
@@ -71,7 +74,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #87CEEB;
   width: 80px;
 }
 
@@ -82,7 +85,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #87CEEB;
   padding: 20px;
 }
 
@@ -95,9 +98,10 @@ body {
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: white;
   border-radius: 5px;
   margin-bottom: 80px;
+  color: black;
 }
 
 .div-buttons {
@@ -329,6 +333,7 @@ canvas {
 
 .janela {
   display: flex;
+  background-color: #0076bc;
   /* width: 100vw; */
 }
 
