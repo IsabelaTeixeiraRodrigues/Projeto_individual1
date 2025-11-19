@@ -1,5 +1,5 @@
-//var ambiente_processo = 'producao';
-var ambiente_processo = 'desenvolvimento';
+var ambiente_processo = 'producao';
+//var ambiente_processo = 'desenvolvimento';
 
 var caminho_env = ambiente_processo === 'producao' ? '.env' : '.env.dev';
 // Acima, temos o uso do operador ternário para definir o caminho do arquivo .env
@@ -15,6 +15,8 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
+
+var dashboardRouter = require("./src/routes/dashboard");
 var quizRouter = require("./src/routes/quiz");
 var avisosRouter = require("./src/routes/avisos");
 var indexRouter = require("./src/routes/index");
@@ -22,14 +24,17 @@ var usuarioRouter = require("./src/routes/usuarios");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-
 app.use(cors());
 
+app.use("/dashboard", dashboardRouter);
 app.use("/quiz", quizRouter);
 app.use("/avisos", avisosRouter);
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
+
+// E SOMENTE DEPOIS colocar o static
+app.use(express.static(path.join(__dirname, "public")));
+
 
 app.listen(PORTA_APP, function () {
     console.log(`

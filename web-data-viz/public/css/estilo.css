@@ -61,7 +61,7 @@ button {
 .text-new-gray {
     color: var(--new-gray);
 }
-#jogo {
+.jogo {
     margin: 0 auto;
 }
 

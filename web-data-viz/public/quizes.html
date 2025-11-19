@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="/assets/icon/Pinguim_do_ep.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
@@ -591,9 +592,6 @@
 
         if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
         } else {
             finalizarJogo()
         }
@@ -601,7 +599,6 @@
     }
 
     function tentarNovamente() {
-        // atualiza a página
         window.location.reload()
     }
 
@@ -879,10 +876,8 @@
         desmarcarRadioButtons2()
 
         if (numeroDaQuestaoAtual2 < quantidadeDeQuestoes2 - 1) {
-            preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
-        } else if (numeroDaQuestaoAtual2 == quantidadeDeQuestoes2 - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
+           preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual)
+
         } else {
             finalizarJogo2()
         }
@@ -1169,10 +1164,8 @@
         desmarcarRadioButtons3()
 
         if (numeroDaQuestaoAtual3 < quantidadeDeQuestoes3 - 1) {
-            preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
-        } else if (numeroDaQuestaoAtual3 == quantidadeDeQuestoes3 - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
+            preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual)
+
         } else {
             finalizarJogo3()
         }

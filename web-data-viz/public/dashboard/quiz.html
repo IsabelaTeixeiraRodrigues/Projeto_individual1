@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/icon/Pinguim_do_ep.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="cards.html">
+                <a href="Quiz.html">
                     <h3>Quizes</h3>
                 </a>
             </div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="btn-nav">
-                <a href="./mural.html">
+                <a href="./comunidade.html">
                     <h3>Comunidade</h3>
                 </a>
             </div>
@@ -62,14 +62,14 @@
             <div id="alerta"><div class="container-meio-1">
         <div class="titulo-meio-1">
             <h3>Explorador da Ilha – O Grande Desafio</h3>
-            <img src="./assets/imgs/QUIZES/ilha.webp" alt="" width="500px">
+            <img src="/assets/imgs/QUIZES/ilha.webp" alt="Imagem ilha" width="500px">
         </div>
         <div class="texto-meio-1">
-            <br> <br>
             <p>Será que você realmente conhece cada canto da ilha? Teste seus conhecimentos sobre lugares, histórias e
+            <br> <br>
                 segredos escondidos.</p> <br> <br>
-            <div id="pontuacaoEJogo">
                 <button class="botao_quiz" id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+            <div class="jogo" id="pontuacaoEJogo" style="display: none;">
 
                 <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
                     <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
@@ -134,7 +134,7 @@
     <div class="container-meio-1">
         <div class="titulo-meio-1">
             <h3>Heróis da Ilha – Quanto você conhece os personagens de Club Penguin?</h3>
-            <img src="./assets/imgs/QUIZES/penguim-band.png" alt="" width="500px">
+            <img src="/assets/imgs/QUIZES/penguim-band.png" alt="" width="500px">
         </div>
         <div class="texto-meio-1">
             <br> <br>
@@ -145,8 +145,8 @@
                 Prove que você é um verdadeiro especialista em Club Penguin neste quiz especial sobre os personagens
                 mais icônicos da ilha!</p> <br> <br>
 
-            <div id="pontuacaoEJogo2">
                 <button class="botao_quiz" id="btnIniciarQuiz2" onclick="iniciarQuiz2()">INICIAR QUIZ</button>
+            <div class="jogo" id="pontuacaoEJogo2" style="display: none;">
 
                 <div id="pontuacao2" class="flex-colunar width-fit-content border-primary">
                     <div id="pontuacaoDuranteJogo2" class="flex-colunar padding-8">
@@ -211,7 +211,7 @@
     <div class="container-meio-1">
         <div class="titulo-meio-1">
             <h3>Missões da EPF – O Desafio Secreto</h3>
-            <img src="./assets/imgs/QUIZES/epf.jpeg" alt="" width="500px">
+            <img src="/assets/imgs/QUIZES/epf.jpeg" alt="" width="500px">
         </div>
 
         <div class="texto-meio-1">
@@ -235,7 +235,7 @@
 
             <button class="botao_quiz" id="btnIniciarQuiz3" onclick="iniciarQuiz3()">INICIAR QUIZ</button>
 
-            <div id="jogo3" class="width-fit-content flex-colunar border-secondary">
+            <div id="jogo3" class="width-fit-content flex-colunar border-secondary" style="display: none;">
 
                 <div id="infoQuestao3" class="padding-8">
                     <span>Questão atual: <span id="spanNumeroDaQuestaoAtual3"></span> de <span
@@ -285,7 +285,7 @@
     <div class="container-meio-1">
         <div class="titulo-meio-1">
             <h3>Descubra Sua Personalidade na EPF</h3>
-            <img src="./assets/imgs/QUIZES/epf-2.png" alt="" width="500px">
+            <img src="/assets/imgs/QUIZES/epf.jpeg" alt="" width="500px">
         </div>
 
         <div class="texto-meio-1">
@@ -306,8 +306,8 @@
                 </div>
             </div>
 
-            <div id="pontuacaoEJogo4">
-                <button class="botao_quiz" id="btnIniciarQuiz4" onclick="iniciarQuiz4()">INICIAR QUIZ</button>
+            <button class="botao_quiz" id="btnIniciarQuiz4" onclick="iniciarQuiz4()">INICIAR QUIZ</button>
+            <div id="pontuacaoEJogo4" style="display: none;">
 
                 <div id="jogo4" class="width-fit-content flex-colunar border-secondary">
 
@@ -364,7 +364,7 @@
     <div class="container-meio-1">
         <div class="titulo-meio-1">
             <h3>Descubra qual Puffle combina com você!</h3>
-            <img src="./assets/imgs/QUIZES/puffle.png" alt="" width="500px">
+            <img src="/assets/imgs/QUIZES/puffle.png" alt="" width="500px">
         </div>
         <div class="texto-meio-1">
             <br> <br>
@@ -382,8 +382,8 @@
                 </div>
             </div>
 
-            <div id="pontuacaoEJogo5">
-                <button class="botao_quiz" id="btnIniciarQuiz5" onclick="iniciarQuiz5()">INICIAR QUIZ</button>
+            <button class="botao_quiz" id="btnIniciarQuiz5" onclick="iniciarQuiz5()">INICIAR QUIZ</button>
+            <div id="pontuacaoEJogo5" style="display: none;">
 
                 <div id="jogo5" class="width-fit-content flex-colunar border-secondary">
 
@@ -548,6 +548,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz() {
+        pontuacaoEJogo.style.display = 'block';
         document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
@@ -607,25 +608,28 @@ const listaDeQuestoes = [
     }
 
 
-    function avancar() {
-        btnProx.disabled = true
-        btnSubmeter.disabled = false
+ function avancar() {
+    btnProx.disabled = true;
+    btnSubmeter.disabled = false;
 
-        desmarcarRadioButtons()
+    desmarcarRadioButtons();
 
-        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else {
-            finalizarJogo()
+    if (numeroDaQuestaoAtual < quantidadeDeQuestoes) {
+        preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual);
+
+        if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
+            alert("Atenção... a próxima é a última questão!");
         }
-        limparCoresBackgroundOpcoes()
+    } else {
+        finalizarJogo();
     }
 
+    limparCoresBackgroundOpcoes();
+}
+
+
     function tentarNovamente() {
-        // atualiza a página
+    
         window.location.reload()
     }
 
@@ -717,7 +721,7 @@ const listaDeQuestoes = [
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 idUsuario: sessionStorage.ID_USUARIO,
-                idQuiz: 1,
+                idQuiz: 16,
                 pontuacao: pontuacaoFinal
             })
         })
@@ -839,6 +843,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz2() {
+        pontuacaoEJogo2.style.display = 'block';
         document.getElementById('pontuacao2').style.display = "flex"
         document.getElementById('jogo2').style.display = "flex"
         document.getElementById('btnIniciarQuiz2').style.display = "none"
@@ -897,25 +902,25 @@ const listaDeQuestoes = [
 
 
     function avancar2() {
-        btnProx2.disabled = true
-        btnSubmeter2.disabled = false
+    btnProx2.disabled = true;
+    btnSubmeter2.disabled = false;
 
-        desmarcarRadioButtons2()
+    desmarcarRadioButtons2();
 
-        if (numeroDaQuestaoAtual2 < quantidadeDeQuestoes2 - 1) {
-            preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
-        } else if (numeroDaQuestaoAtual2 == quantidadeDeQuestoes2 - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2)
-        } else {
-            finalizarJogo2()
+
+    if (numeroDaQuestaoAtual2 < quantidadeDeQuestoes2) {
+        preencherHTMLcomQuestaoAtual2(numeroDaQuestaoAtual2);
+
+        if (numeroDaQuestaoAtual2 == quantidadeDeQuestoes2 - 1) {
+            alert("Atenção... a próxima é a última questão!");
         }
-        limparCoresBackgroundOpcoes2()
+    } else {
+        finalizarJogo2();
     }
 
-    function tentarNovamente2() {
-        window.location.reload()
-    }
+    limparCoresBackgroundOpcoes2();
+}
+
 
     function checarResposta2() {
 
@@ -1002,12 +1007,12 @@ const listaDeQuestoes = [
         btnSubmeter2.disabled = true
         btnTentarNovamente2.disabled = false
 
-         fetch("/quiz/salvarResultado", {
+         fetch("/Quiz/salvarResultado", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 idUsuario: sessionStorage.ID_USUARIO,
-                idQuiz: 2,
+                idQuiz: 17,
                 pontuacao: pontuacaoFinal2
             })
         })
@@ -1127,6 +1132,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz3() {
+        jogo.style.display = 'block';
         document.getElementById('pontuacao3').style.display = "flex"
         document.getElementById('jogo3').style.display = "flex"
         document.getElementById('btnIniciarQuiz3').style.display = "none"
@@ -1186,23 +1192,25 @@ const listaDeQuestoes = [
 
 
     function avancar3() {
+    btnProx3.disabled = true;
+    btnSubmeter3.disabled = false;
 
-        btnProx3.disabled = true
-        btnSubmeter3.disabled = false
+    desmarcarRadioButtons3();
 
-        desmarcarRadioButtons3()
 
-        if (numeroDaQuestaoAtual3 < quantidadeDeQuestoes3 - 1) {
-            preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
-        } else if (numeroDaQuestaoAtual3 == quantidadeDeQuestoes3 - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3)
-        } else {
-            finalizarJogo3()
+    if (numeroDaQuestaoAtual3 < quantidadeDeQuestoes3) {
+        preencherHTMLcomQuestaoAtual3(numeroDaQuestaoAtual3);
+
+        if (numeroDaQuestaoAtual3 == quantidadeDeQuestoes3 - 1) {
+            alert("Atenção... a próxima é a última questão!");
         }
-
-        limparCoresBackgroundOpcoes3()
+    } else {
+        finalizarJogo3();
     }
+
+    limparCoresBackgroundOpcoes3();
+}
+
 
     function tentarNovamente3() {
         window.location.reload()
@@ -1299,7 +1307,7 @@ const listaDeQuestoes = [
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 idUsuario: sessionStorage.ID_USUARIO,
-                idQuiz: 3,
+                idQuiz: 18,
                 pontuacao: pontuacaoFinal3
             })
         })
@@ -1448,23 +1456,24 @@ const listaDeQuestoes = [
     };
 
     function onloadEsconder4() {
-        document.getElementById('pontuacao4').style.display = "none"
-        document.getElementById('jogo4').style.display = "none"
-    }
+    document.getElementById('pontuacao4').style.display = "none";
+    document.getElementById('jogo4').style.display = "none";
+}
 
     function iniciarQuiz4() {
-        document.getElementById('pontuacao4').style.display = "flex"
-        document.getElementById('jogo4').style.display = "flex"
-        document.getElementById('btnIniciarQuiz4').style.display = "none"
+    document.getElementById('pontuacaoEJogo4').style.display = 'block';
+    document.getElementById('pontuacao4').style.display = "flex";
+    document.getElementById('jogo4').style.display = "flex";
+    document.getElementById('btnIniciarQuiz4').style.display = "none";
 
-        document.getElementById('qtdQuestoes4').innerHTML = quantidadeDeQuestoes4
+    document.getElementById('qtdQuestoes4').innerHTML = quantidadeDeQuestoes4;
 
-        preencherHTMLcomQuestaoAtual4(0)
+    preencherHTMLcomQuestaoAtual4(0);
 
-        btnSubmeter4.disabled = true
-        btnProx4.disabled = true
-        btnTentarNovamente4.disabled = true
-    }
+    btnSubmeter4.disabled = false;   
+    btnProx4.disabled = true;      
+    btnTentarNovamente4.disabled = true;
+}
 
     function preencherHTMLcomQuestaoAtual4(index) {
         habilitarAlternativas4(true)
@@ -1480,27 +1489,22 @@ const listaDeQuestoes = [
     }
 
     function submeter4() {
-        const options = document.getElementsByName("option4")
+    const options = document.getElementsByName("option4");
 
-        let hasChecked = false
-        for (let i = 0; i < options.length; i++) {
-            if (options[i].checked) {
-                hasChecked = true
-                break
-            }
-        }
+    let hasChecked = false;
+    options.forEach(op => {
+        if (op.checked) hasChecked = true;
+    });
 
-        if (!hasChecked) {
-            alert("Não há alternativas escolhidas. Escolha uma opção.")
-        } else {
-            btnSubmeter4.disabled = true
-            btnProx4.disabled = false
-
-            habilitarAlternativas4(false)
-
-            checarResposta4()
-        }
+    if (!hasChecked) {
+        alert("Selecione uma resposta.");
+        return;
     }
+
+    btnSubmeter4.disabled = true;
+    checarResposta4();
+}
+
 
     function habilitarAlternativas4(habilitar) {
         primeiraOpcao4.disabled = !habilitar;
@@ -1510,13 +1514,11 @@ const listaDeQuestoes = [
     }
 
 
-    function avancar4() {
-        btnProx4.disabled = true
-        btnSubmeter4.disabled = false
+function avancar4() {
+    desmarcarRadioButtons4();
+    habilitarAlternativas4(true);
+}
 
-        desmarcarRadioButtons4()
-        habilitarAlternativas4(true)
-    }
 
     function tentarNovamente4() {
         window.location.reload()
@@ -1559,7 +1561,7 @@ const listaDeQuestoes = [
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             idUsuario: sessionStorage.ID_USUARIO,
-            idQuiz: 4, 
+            idQuiz: 19, 
             pontuacao: resultadoFinal
         })
     })
@@ -1570,35 +1572,33 @@ const listaDeQuestoes = [
 
 
     function checarResposta4() {
-        const options = document.getElementsByName("option4");
-        const questaoAtual = listaDeQuestoes4[numeroDaQuestaoAtual4];
+    const options = document.getElementsByName("option4");
+    const questaoAtual = listaDeQuestoes4[numeroDaQuestaoAtual4];
 
-        let valorEscolhido = null;
+    let valorEscolhido = null;
 
-        options.forEach((option) => {
-            if (option.checked) {
-                if (option.value === "alternativaA") valorEscolhido = questaoAtual.valorA;
-                if (option.value === "alternativaB") valorEscolhido = questaoAtual.valorB;
-                if (option.value === "alternativaC") valorEscolhido = questaoAtual.valorC;
-                if (option.value === "alternativaD") valorEscolhido = questaoAtual.valorD;
-            }
-        });
-
-        if (!valorEscolhido) {
-            alert("Por favor, selecione uma resposta!");
-            return;
+    options.forEach((option) => {
+        if (option.checked) {
+            if (option.value === "alternativaA") valorEscolhido = questaoAtual.valorA;
+            if (option.value === "alternativaB") valorEscolhido = questaoAtual.valorB;
+            if (option.value === "alternativaC") valorEscolhido = questaoAtual.valorC;
+            if (option.value === "alternativaD") valorEscolhido = questaoAtual.valorD;
         }
+    });
 
-        pontuacao[valorEscolhido]++;
+    pontuacao[valorEscolhido]++;
 
-        numeroDaQuestaoAtual4++;
+    numeroDaQuestaoAtual4++;
 
-        if (numeroDaQuestaoAtual4 < quantidadeDeQuestoes4) {
-            preencherHTMLcomQuestaoAtual4(numeroDaQuestaoAtual4);
-        } else {
-            finalizarJogo4();
-        }
+    if (numeroDaQuestaoAtual4 < quantidadeDeQuestoes4) {
+        desmarcarRadioButtons4();              
+        preencherHTMLcomQuestaoAtual4(numeroDaQuestaoAtual4); 
+        btnSubmeter4.disabled = false;  
+    } else {
+        finalizarJogo4();
     }
+}
+
 
 
     function desmarcarRadioButtons4() {
@@ -1691,6 +1691,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz5() {
+        pontuacaoEJogo5.style.display = 'block';
         document.getElementById('pontuacao5').style.display = "flex";
         document.getElementById('jogo5').style.display = "flex";
         document.getElementById('btnIniciarQuiz5').style.display = "none";
@@ -1748,12 +1749,13 @@ const listaDeQuestoes = [
     }
 
     function avancar5() {
-        btnProx5.disabled = true;
-        btnSubmeter5.disabled = false;
+    btnProx5.disabled = true;
+    btnSubmeter5.disabled = false;
 
-        desmarcarRadioButtons5();
-        habilitarAlternativas5(true);
-    }
+    desmarcarRadioButtons5();
+    habilitarAlternativas5(true);
+}
+
 
     function tentarNovamente5() {
         window.location.reload();
@@ -1796,7 +1798,7 @@ const listaDeQuestoes = [
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             idUsuario: sessionStorage.ID_USUARIO,
-            idQuiz: 5,
+            idQuiz: 20,
             pontuacao: resultadoFinal
         })
     })
