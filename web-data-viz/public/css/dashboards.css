@@ -124,7 +124,11 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-image: url(https://wallpapers.com/images/hd/club-penguin-in-winter-environment-q5au3nlmk55c5o8y.jpg);
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
   height: 100vh;
   overflow: auto;
 }
@@ -264,12 +268,16 @@ body {
 }
 
 .btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%;
+   display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    width: 700px;
+    margin: 70px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align:  center;
+    box-shadow: 0 4px 8px black;
 }
 
 .graph {
