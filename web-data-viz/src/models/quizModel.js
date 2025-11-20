@@ -1,9 +1,6 @@
 var database = require("../database/config");
 
 function salvarResultado(idUsuario, idQuiz, pontuacao) {
-    console.log("ACESSEI O QuizModel. Enviando dados para o banco.");
-    console.log("Usuário:", idUsuario, "| Quiz:", idQuiz, "| Pontuação:", pontuacao);
-
     var instrucao = `
         INSERT INTO resultado_quiz (idUsuario, idQuiz, pontuacao) VALUES (${idUsuario}, ${idQuiz}, '${pontuacao}');
     `;
