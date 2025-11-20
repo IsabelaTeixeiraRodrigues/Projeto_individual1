@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="/css/style.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -31,6 +32,7 @@
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
+            <img src="https://i.pinimg.com/originals/6b/0b/79/6b0b79c3a2f539bdd0622537af960a41.gif" alt="" width="100px">
 
             <div class="btn-nav-white">
                 <a href="Quiz.html">
@@ -45,7 +47,7 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Comunidade</h3>
+                    <h3>Comunidade</h3>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -61,7 +63,9 @@
                 <div id="alerta">
                 </div>
                 <div class="container">
-                    <h1>Comunidade</h1>
+                    <div class="container-personagens">
+                        <h1>Comunidade</h1>
+                    </div>
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>

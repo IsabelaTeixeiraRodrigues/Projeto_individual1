@@ -61,9 +61,6 @@ button {
 .text-new-gray {
     color: var(--new-gray);
 }
-.jogo {
-    margin: 0 auto;
-}
 
 .botao_quiz{
     padding: 20px;

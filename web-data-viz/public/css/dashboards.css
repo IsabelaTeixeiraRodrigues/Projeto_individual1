@@ -361,8 +361,8 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  background-color: #F4F4F4;
+  border-radius: 3px;
 }
 
 .dash-right {
