@@ -22,10 +22,6 @@ function salvarResultado(req, res) {
     }
 }
 
-module.exports = {
-    salvarResultado
-};
-
 function obterMedias(req, res) {
     quizModel.obterMedias()
         .then((resultado) => res.json(resultado))
@@ -42,4 +38,10 @@ function obterTopPersonalidade(req, res) {
             res.status(500).json({ erro: "Erro ao buscar tops" });
         });
 }
+
+module.exports = {
+    salvarResultado,
+    obterMedias,
+    obterTopPersonalidade
+};
 

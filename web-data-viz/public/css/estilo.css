@@ -69,3 +69,23 @@ button {
     border-radius: 20px;
     cursor: pointer;
 }
+.jogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#opcoes div{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 50%;
+    flex-direction: column;
+}
+#opcoes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -103,25 +103,27 @@
                     </div>
 
                     <div id="opcoes" class="flex-colunar padding-8">
-                        <span>
-                            <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                            <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                            <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                            <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                        </span>
-                        <span>
-                            <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                            <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                        </span>
+                        <div>
+                            <span>
+                                <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                                <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                                <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                                <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
+                            </span>
+                            <span>
+                                <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
+                                <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
+                            </span>
+                        </div>
                     </div>
-
-                    <div id="botoes" class="flex-colunar padding-8">
+                        
+                        <div id="botoes" class="flex-colunar padding-8">
                         <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                         <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
                         <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
@@ -550,7 +552,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz() {
-        pontuacaoEJogo.style.display = 'block';
+        pontuacaoEJogo.style.display = 'flex';
         document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
@@ -1134,7 +1136,7 @@ const listaDeQuestoes = [
     }
 
     function iniciarQuiz3() {
-        jogo.style.display = 'block';
+        jogo.style.display = 'flex';
         document.getElementById('pontuacao3').style.display = "flex"
         document.getElementById('jogo3').style.display = "flex"
         document.getElementById('btnIniciarQuiz3').style.display = "none"

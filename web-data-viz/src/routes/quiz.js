@@ -8,5 +8,3 @@ router.post("/salvarResultado", function (req, res) {
 });
 
 module.exports = router;
-
-

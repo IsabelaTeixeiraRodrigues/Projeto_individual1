@@ -7,16 +7,11 @@ function salvarResultado(idUsuario, idQuiz, pontuacao) {
 
     return database.executar(instrucao);
 }
-
-module.exports = {
-    salvarResultado
-};
-
 function obterMedias() {
     var instrucao = `
         SELECT 
             idQuiz,
-            AVG(CAST(pontuacao AS DECIMAL)) AS media
+            AVG(pontuacao) AS media
         FROM resultado_quiz
         WHERE idQuiz IN (16,17,18)
         GROUP BY idQuiz;
@@ -32,9 +27,14 @@ function obterTopPersonalidade() {
         FROM resultado_quiz
         WHERE idQuiz IN (19,20)
         GROUP BY pontuacao
-        ORDER BY qtd DESC
-        LIMIT 3;
+        ORDER BY qtd DESC;
     `;
     return database.executar(instrucao);
 }
+
+module.exports = {
+    salvarResultado, 
+    obterMedias,
+    obterTopPersonalidade
+};
 
