@@ -4,7 +4,7 @@ function buscarMediasQuizzes() {
     var instrucao = `
         SELECT 
             idQuiz,
-            AVG(CAST(pontuacao AS DECIMAL(10,2))) AS media
+            AVG(pontuacao) AS media
         FROM resultado_quiz
         WHERE idQuiz IN (16,17,18)
         GROUP BY idQuiz;

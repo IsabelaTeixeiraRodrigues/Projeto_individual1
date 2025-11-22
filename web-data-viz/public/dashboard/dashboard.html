@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="/css/style.css">
     <script src="../js/sessao.js"></script>
 
     <!-- scripts do Chart.js - 2022-1 -->
@@ -59,6 +60,37 @@
             </div>
 
         </div>
+        </div>
+
+         <div class="dash">
+            <div class="btns-dash" id="btnAquario">
+                <p>Porcentagem média de acertos</p> <br>
+                <p>(Global)</p>
+            <div> <br> <br>
+                <span id="media_KPI"></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="dash">
+            <div class="btns-dash" id="btnAquario">
+                <p>Top 1 puffle dos usuarios</p> <br>
+                <p>(personalidade)</p>
+            <div> <br> <br>
+                <span id="top1Puffle"></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="dash">
+            <div class="btns-dash" id="btnAquario">
+                <p>Top 1 personalidade dos usuarios</p> <br>
+                <p>(personalidade)</p>
+            <div> <br> <br>
+                <span id="top1Personagem"></span>
+            </div>
+            </div>
+            </div>
 
         <div class="dash">
             <div class="btns-dash" id="btnAquario">
@@ -106,12 +138,12 @@
 
 function obterDados() {
 
-
     fetch("/dashboard/medias")
         .then(r => r.json())
         .then(dados => {
             console.log("Médias:", dados);
             plotarGraficoLinha(dados);
+             AtualizarKpi(dados)
         });
 
     fetch("/dashboard/personagens")
@@ -119,6 +151,7 @@ function obterDados() {
         .then(dados => {
             console.log("Personagens:", dados);
              plotarGraficoBarra2(dados)
+             AtualizarKpi3(dados)
         });
 
     fetch("/dashboard/puffles")
@@ -126,10 +159,8 @@ function obterDados() {
         .then(dados => {
             console.log("Puffles:", dados);
              plotarGraficoBarra(dados)
+             AtualizarKpi2(dados)
         });
-
-plotarGraficoLinha(dados)
- plotarGraficoBarra(dados)
 }
 
 
@@ -137,10 +168,13 @@ function plotarGraficoLinha(dados) {
 
     let labels = [];
     let valores = [];
+    let dadosMedia = [];
 
     for (let i = 0; i < dados.length; i++) {
        labels.push("Quiz " + dados[i].idQuiz);
         valores.push(Number(dados[i].media));
+        dadosMedia.push(Number(dados[i].media))
+
 
     }
 
@@ -216,5 +250,78 @@ function plotarGraficoBarra2(dados) {
             }]
         }
     });
+}
+
+function AtualizarKpi(dados){
+    // porcentagem média de acertos KPI 1 
+    var media_KPI = document.getElementById('media_KPI')
+    var Media = -1
+    var soma = 0
+
+    for(var i = 0; i < dados.length; i++){
+
+        var valor = Number(dados[i].media);
+
+        soma += valor
+
+        if (valor > Media) {
+            Media = soma/dados.length;
+        }
+
+        var totalQuestoes = 10;
+        var porcentagem = (Media / totalQuestoes) * 100;
+    }
+
+    media_KPI.innerHTML = `${porcentagem.toFixed(0)
+}%`
+}
+
+function AtualizarKpi2(dados){
+    var puffleTop1 = document.getElementById('top1Puffle')
+    var Top1 = dados[0]
+
+    puffleTop1.innerHTML = "";
+    
+    if(Top1.puffle == 'puffle_vermelho'){
+    puffleTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/puffle-vermelho.png" alt="" width="200">`;
+    } else if(Top1.puffle == 'puffle_amarelo'){
+        puffleTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/puffle-amarelo.webp" alt="" width="200">`;
+    } else if(Top1.puffle == 'puffle_preto'){
+        puffleTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/puffle-preto.webp" alt="" width="200">`;
+    }else{
+        puffleTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/puffleAzul.png" alt="" width="200">`;
+    }
+
+
+    puffleTop1.innerHTML += Top1.puffle
+
+}
+
+function AtualizarKpi3(dados){
+    var PersonagemTop1 = document.getElementById('top1Personagem')
+    var Top1 = dados[0]
+
+    PersonagemTop1.innerHTML = "";
+    
+    if(Top1.personagem == 'criativo'){
+    PersonagemTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/gary.png" alt="" width="200">`;
+    } else if(Top1.personagem == 'aventura'){
+        PersonagemTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/rock.webp" alt="" width="200">`;
+    } else if(Top1.personagem == 'lider'){
+        PersonagemTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/sensei.png" alt="" width="200">`;
+    }else{
+        PersonagemTop1.innerHTML += `
+    <img src="/assets/imgs/personagens/tia-artic.png" alt="" width="200">`;
+    }
+
+    PersonagemTop1.innerHTML += Top1.personagem
+
 }
 </script>
