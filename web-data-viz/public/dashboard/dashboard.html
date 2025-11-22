@@ -198,10 +198,23 @@ function plotarGraficoBarra(dados) {
 
     let labels = [];
     let valores = [];
+    let cores = []; 
 
     for (let i = 0; i < dados.length; i++) {
        labels.push( dados[i].puffle);
         valores.push(Number(dados[i].quantidade));
+
+        let puffle = dados[i].puffle;
+
+         if (puffle == 'puffle_vermelho') {
+            cores.push('red');
+        } else if (puffle == 'puffle_amarelo') {
+            cores.push('yellow');
+        } else if (puffle == 'puffle_preto') {
+            cores.push('black');
+        } else {
+            cores.push('blue');
+        }
 
     }
 
@@ -214,8 +227,7 @@ function plotarGraficoBarra(dados) {
             datasets: [{
                 label: "Top 3 Puffles",
                 data: valores,
-                backgroundColor: 'blue',
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: cores,
                 tension: 0.3, 
                 
             }]
@@ -227,33 +239,47 @@ function plotarGraficoBarra2(dados) {
 
     let labels = [];
     let valores = [];
+    let cores = []; 
 
     for (let i = 0; i < dados.length; i++) {
        labels.push( dados[i].personagem);
         valores.push(Number(dados[i].quantidade));
+
+        let personagem = dados[i].personagem;
+
+         if (personagem == 'criativo') {
+            cores.push('blue');
+        } else if (personagem == 'aventura') {
+            cores.push('red');
+        } else if (personagem == 'lider') {
+            cores.push('gray');
+        } else {
+            cores.push('green');
+        }
 
     }
 
     let ctx = document.getElementById('bar2').getContext('2d');
 
     new Chart(ctx, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
                 label: "Top 3 Personagens",
                 data: valores,
-                backgroundColor: 'blue',
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: cores,
                 tension: 0.3, 
                 
             }]
         }
     });
+
+
+
 }
 
 function AtualizarKpi(dados){
-    // porcentagem média de acertos KPI 1 
     var media_KPI = document.getElementById('media_KPI')
     var Media = -1
     var soma = 0
@@ -296,9 +322,6 @@ function AtualizarKpi2(dados){
     <img src="/assets/imgs/personagens/puffleAzul.png" alt="" width="200">`;
     }
 
-
-    puffleTop1.innerHTML += Top1.puffle
-
 }
 
 function AtualizarKpi3(dados){
@@ -320,8 +343,6 @@ function AtualizarKpi3(dados){
         PersonagemTop1.innerHTML += `
     <img src="/assets/imgs/personagens/tia-artic.png" alt="" width="200">`;
     }
-
-    PersonagemTop1.innerHTML += Top1.personagem
 
 }
 </script>
