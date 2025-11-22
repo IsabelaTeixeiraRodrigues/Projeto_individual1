@@ -67,23 +67,25 @@
                         <h1>Comunidade</h1>
                     </div>
                     <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Tópico da mensagem
+                        <div class="container-personagens">
+                            <form id="form_postagem" method="post" onsubmit="return publicar()">
+                                <label>
+                                    Tópico da mensagem
+                                    <br>
+                                    <input name="titulo" id="titulo" maxlength="100" type="text">
+                                </label>
                                 <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <br>
-                            <label>
-                                Mensagem (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
+                                <label>
+                                    Mensagem (máximo de 250 caracteres):
+                                    <br>
+                                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                </label>
+                                <br>
+                                <br>
+                                <button>Enviar</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="container-personagens">
                         <h1>Chat</h1>

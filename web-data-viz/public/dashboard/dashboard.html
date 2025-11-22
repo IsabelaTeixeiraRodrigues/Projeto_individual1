@@ -225,7 +225,7 @@ function plotarGraficoBarra(dados) {
         data: {
             labels: labels,
             datasets: [{
-                label: "Top 3 Puffles",
+                label: "Top Puffles",
                 data: valores,
                 backgroundColor: cores,
                 tension: 0.3, 
@@ -262,11 +262,11 @@ function plotarGraficoBarra2(dados) {
     let ctx = document.getElementById('bar2').getContext('2d');
 
     new Chart(ctx, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
             labels: labels,
             datasets: [{
-                label: "Top 3 Personagens",
+                label: "Top Personagens",
                 data: valores,
                 backgroundColor: cores,
                 tension: 0.3, 

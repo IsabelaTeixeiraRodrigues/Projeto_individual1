@@ -31,7 +31,7 @@ body {
 }
 
 .dash-right .avisos .container .div-form {
-  width: 95%;
+  width: 100%;
 }
 
 .dash-right .avisos .container .div-form #form_postagem {
@@ -39,19 +39,22 @@ body {
 }
 
 .dash-right .avisos .div-form label {
-  width: 95%;
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
-.dash-right .avisos .div-form input {
-  width: 95%;
-  border-radius: 5px;
-}
-
+.dash-right .avisos .div-form input,
 .dash-right .avisos .div-form textarea {
-  width: 95%;
-  border: 3px solid #87CEEB;
-  background-color: white;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 2px solid #87CEEB;
+  box-sizing: border-box;
+}
+
+#textarea_descricao {
+  height: 200px;
 }
 
 .dash-right .avisos .div-form button {
@@ -135,8 +138,9 @@ body {
   background-position: center;  
   background-repeat: no-repeat;  
   background-attachment: fixed;
-  height: 100vh;
+  height: auto;
   overflow: auto;
+  padding: 20px 0;
 }
 
 .area-parametros-alerta {
@@ -275,15 +279,17 @@ body {
 
 .btns-dash {
    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #e0e0e0;
     border-radius: 20px;
-    width: 700px;
-    margin: 70px;
+    max-width: 900px; 
+    margin: 20px auto;
+    height: 300px;
     margin-top: 20px;
     padding: 10px;
     text-align:  center;
     box-shadow: 0 4px 8px black;
+    height: auto;
 }
 
 .graph {
@@ -347,7 +353,7 @@ canvas {
 
 .janela {
   display: flex;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 
 .header-left a {
@@ -372,8 +378,7 @@ canvas {
 
 .dash-right {
  display: flex;
-  justify-content: center;   
-  align-items: flex-start;   
+  justify-content: flex-start;     
   margin-left: 20%;         
   width: 80%;
   background-color: transparent;
@@ -462,4 +467,12 @@ canvas {
 .container-personagens h1 {
     width: 100%;
     text-align: center;
+}
+
+#media_KPI {
+  display: block;
+  font-size: 72px;      
+  font-weight: 700;      
+  color: black;
+  margin-top: 5px;
 }
