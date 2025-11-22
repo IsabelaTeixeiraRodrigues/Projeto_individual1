@@ -85,7 +85,9 @@
                             <button>Enviar</button>
                         </form>
                     </div>
-                    <h1>Chat</h1>
+                    <div class="container-personagens">
+                        <h1>Chat</h1>
+                    </div>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -191,7 +193,6 @@
                     feed.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
-
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");

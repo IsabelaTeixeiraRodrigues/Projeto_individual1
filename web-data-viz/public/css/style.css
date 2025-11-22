@@ -192,12 +192,14 @@ html {
 
 .container-personagens{
     display: flex;
+    justify-content: center;
+    align-items: center; 
     flex-direction: row;
     background-color: #e0e0e0;
     border-radius: 20px;
     width: 80%;
     max-width: 400px;
-    margin: 70px;
+    margin: 20px auto;
     margin-top: 20px;
     padding: 10px;
     text-align:  center;
