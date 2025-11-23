@@ -214,7 +214,7 @@ body {
   color: white;
 }
 
-.card-aquario {
+.card-a {
   margin: 2%;
   min-width: 40%;
   max-width: 50%;
@@ -228,29 +228,29 @@ body {
   font-size: 20px;
 }
 
-.card-aquario h1 {
+.card-a h1 {
   width: fit-content;
 }
 
-.card-aquario p {
+.card-a p {
   margin: 0;
   font-size: 50px;
   font-weight: lighter;
   text-align: left;
 }
 
-.desc-aquario {
+.desc-a {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
 }
 
-.desc-aquario .cor-alerta {
+.desc-a .cor-alerta {
   width: 30px;
 }
 
-.title-aquario {
+.title-a {
   width: 100%;
 }
 
