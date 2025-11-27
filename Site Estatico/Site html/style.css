@@ -1,0 +1,385 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px;
+    background-image: url(https://wallpapers.com/images/hd/club-penguin-in-winter-environment-q5au3nlmk55c5o8y.jpg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+}
+
+.epf-body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px;
+    background-image: url(https://img.freepik.com/fotos-premium/matriz-azul-de-fundo-digital-codificacao-ou-conceito-de-hacking-fluxo-de-numeros-aleatorios-renderizacao-em-3d_634443-415.jpg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* inicio css home */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #87cefa;
+    color: white;
+    padding: 20px 30px;
+}
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.navbar-lista ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.navbar-lista li{
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navbar-lista li:hover{
+    color: #000080;
+}
+.container-meio-1{
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align:  center;
+    box-shadow: 0 4px 8px black;
+}
+.titulo-meio-1 h3{
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.titulo-meio-1 p{
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-meio-2{
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align:  center;
+    box-shadow: 0 4px 8px black;
+}
+.titulo-meio-2 h3{
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.imagem-meio-2 img{
+   width: 400px; 
+   border-radius: 15px;
+   box-shadow: 0 4px 10px black;
+   margin-top: 50px;
+   transition: transform 0.3s ease;
+}
+
+.imagem-meio-2 img:hover{
+    transform: scale(1.05);
+}
+
+.imagem-guia-meio-2 img{
+    width: 150px;
+}
+
+.lista-meio2{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.lista-meio2 li{
+    margin: 5px 0; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    color: black; 
+    position: relative;
+    padding-left: 20px; 
+}
+
+.lista-meio2 li:hover {
+    color: #007bff; 
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.container-meio{
+    display: flex;
+    align-items: start;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align:  center;
+    box-shadow: 0 4px 8px black;
+}
+
+.conteiner-esquerda img{
+    width: 350px;
+    height: 200px;
+}
+
+.rodape{
+    background-color: #87cefa;
+    color: black;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.rodape-lista ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.rodape-lista ul li img{
+    width: 40px;
+    height: 50px;
+    transform: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.rodape-lista p{
+    font-size: 0.9cm;
+    margin: 0;
+}
+
+/* fim css home */
+
+/* inicio css personagens */
+
+.personagens-lado {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.container-personagens{
+    display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin: 70px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align:  center;
+    box-shadow: 0 4px 8px black;
+}
+
+.imagem-personagem img{
+    width: 300px;
+    height: 400px;
+}
+
+.imagem-personagem img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s;
+
+}
+/* fim css personagens */
+
+/* inicio css EPF */
+.container-epf{
+    background-color: black;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align:  center;
+    box-shadow: 0 4px 8px rgb(100, 99, 99);
+    color: white;
+}
+
+.personagens-lado {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.container-personagens-epf{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin: 70px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align:  center;
+    box-shadow: 0 4px 8px rgb(100, 99, 99);
+    color: white;
+}
+
+.imagem-personagem-epf img{
+    width: 300px;
+    height: 400px;
+}
+
+.imagem-personagem-epf img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s;
+
+}
+
+.container-meio-epf{
+    display: flex;
+    align-items: start;
+    background-color: black;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align:  center;
+    box-shadow: 0 4px 8px rgb(100, 99, 99);
+    color: white;
+}
+
+.conteiner-esquerda-epf img{
+    width: 350px;
+    height: 200px;
+}
+
+.lista-meio2-epf{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.lista-meio2-epf li{
+    margin: 5px 0; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    color: white; 
+    padding-left: 20px; 
+}
+
+.lista-meio2-epf li:hover {
+    color: #007bff; 
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.centralizar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* fim css EPF */
+
+/*inicio css login*/
+.container-login{
+    display: flex;
+    width: 60%;
+    height: auto;
+    margin: 50px auto;
+    background-color: #87cefa;
+    color: white;
+    max-width: auto;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(100, 99, 99);
+}
+
+#imagem-esquerda{
+    width: 50%;
+}
+
+#imagem-esquerda img{
+    width: 100%;
+    height: 500px;
+}
+
+#login-direita{
+    width: 45%;
+    margin-right: 20px;
+}
+
+#login-direita input{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+#login-direita input:focus{
+    outline: none;
+    border-color: #87cefa;
+     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#login-direita button{
+    padding: 10px;
+    width: 100%;
+    background-color: #6ba3c6;
+    color: white;
+    border-radius: 20px;
+}
+/*fim css login*/
+
+/*inicio css cadastro*/
+.container-cadastro{
+    display: flex;
+    background-color: #87cefa;
+    width: 60%;
+    margin: 50px auto;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(100, 99, 99);
+}
+
+.titulo-cadastro{
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+/*fim css cadastro*/

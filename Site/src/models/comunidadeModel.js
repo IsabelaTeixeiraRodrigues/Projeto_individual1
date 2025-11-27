@@ -47,16 +47,6 @@ function publicar(titulo, descricao, idUsuario) {
     `;
     return database.executar(sql);
 }
-
-function editar(novaDescricao, idcomunidade) {
-    var sql = `
-        UPDATE mensagem 
-        SET descricao = '${novaDescricao}'
-        WHERE id = ${idcomunidade};
-    `;
-    return database.executar(sql);
-}
-
 function deletar(idcomunidade) {
     var sql = `
         DELETE FROM mensagem WHERE id = ${idcomunidade};
@@ -69,6 +59,5 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
     deletar
 };

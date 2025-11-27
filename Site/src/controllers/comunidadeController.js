@@ -88,26 +88,6 @@ function publicar(req, res) {
     }
 }
 
-function editar(req, res) {
-    var novaDescricao = req.body.descricao;
-    var idcomunidade = req.params.idcomunidade;
-
-    comunidadeModel.editar(novaDescricao, idcomunidade)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-
-}
-
 function deletar(req, res) {
     var idcomunidade = req.params.idcomunidade;
 
@@ -131,6 +111,5 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
     deletar
 }

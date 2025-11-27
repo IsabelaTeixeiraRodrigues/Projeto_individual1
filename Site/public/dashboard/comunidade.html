@@ -147,35 +147,26 @@
 
     }
 
-    function editar(idcomunidade) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idcomunidade;
-        console.log("cliquei em editar - " + idcomunidade);
-        window.alert("Você será redirecionado à página de edição do comunidadeidcomunidade de id número: " + idcomunidade);
-        window.location = "/dashboard/edicao-comunidadeidcomunidade.html"
-
-    }
-
     function deletar(idcomunidade) {
-        console.log("Criar função de apagar post escolhido - ID" + idcomunidade);
-        fetch(`/comunidade/deletar/${idcomunidade}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function (resposta) {
+    fetch(`/comunidade/deletar/${idcomunidade}`, {
+        method: "DELETE"
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/comunidade.html"
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
+        if (resposta.ok) {
+            alert("Post deletado com sucesso!");
+            atualizarFeed();
+            finalizarAguardar && finalizarAguardar();
+        } else if (resposta.status == 404) {
+            alert("Publicação não encontrada (404).");
+        } else {
+            throw ("Houve um erro ao tentar deletar! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (erro) {
+        console.log(`#ERRO: ${erro}`);
+        finalizarAguardar && finalizarAguardar();
+    });
+}
 
     function atualizarFeed() {
         fetch("/comunidade/listar").then(function (resposta) {
@@ -201,7 +192,6 @@
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
 
@@ -209,7 +199,6 @@
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
@@ -220,10 +209,6 @@
 
                         divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idcomunidade;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idcomunidade})`);
-
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idcomunidade;
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idcomunidade})`);
@@ -233,7 +218,6 @@
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }

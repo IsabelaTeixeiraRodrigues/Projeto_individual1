@@ -19,10 +19,6 @@ router.post("/publicar/:idUsuario", function (req, res) {
     comunidadeController.publicar(req, res);
 });
 
-router.put("/editar/:idcomunidade", function (req, res) {
-    comunidadeController.editar(req, res);
-});
-
 router.delete("/deletar/:idcomunidade", function (req, res) {
     comunidadeController.deletar(req, res);
 });
