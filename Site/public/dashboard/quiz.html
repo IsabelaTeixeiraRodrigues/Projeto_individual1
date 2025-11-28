@@ -154,11 +154,13 @@
                             <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas2"></span></span>
                             <span class="width-fit-content">Quantidade de erros: <span id="spanErradas2"></span></span>
                         </div>
-                        <div id="pontuacaoFinalJogo2" class="flex-colunar padding-8">
-                            <span id="pontuacaoFinal2" class="width-fit-content">Pontuação Final:
-                                <span id="spanPontuacaoFinal2">***</span>
-                            </span>
-                            <span id="msgFinal2" class="width-fit-content">***</span>
+                        <div class="jogo">
+                            <div id="pontuacaoFinalJogo2" class="flex-colunar padding-8">
+                                <span id="pontuacaoFinal2" class="width-fit-content">Pontuação Final:
+                                    <span id="spanPontuacaoFinal2">***</span>
+                                </span>
+                                <span id="msgFinal2" class="width-fit-content">***</span>
+                            </div>
                         </div>
                     </div>
                     <div id="jogo2" class="width-fit-content flex-colunar border-secondary">
@@ -223,15 +225,17 @@
             <div class="jogo">
                 <div id="containerQuiz3">
                     <div id="pontuacao3" class="flex-colunar width-fit-content border-primary" style="display: none;">
-                        <div id="pontuacaoDuranteJogo3" class="flex-colunar padding-8">
-                            <span>Quantidade de acertos: <span id="spanCertas3"></span></span>
-                            <span>Quantidade de erros: <span id="spanErradas3"></span></span>
+                        <div class="jogo">
+                            <div id="pontuacaoDuranteJogo3" class="flex-colunar padding-8">
+                                <span>Quantidade de acertos: <span id="spanCertas3"></span></span>
+                                <span>Quantidade de erros: <span id="spanErradas3"></span></span>
+                            </div>
+                            <div] id="pontuacaoFinalJogo3" class="flex-colunar padding-8">
+                                <span>Pontuação Final: <span id="spanPontuacaoFinal3">***</span></span>
+                                <span id="msgFinal3">***</span>
+                            </div>
+                                                </div>
                         </div>
-                        <div] id="pontuacaoFinalJogo3" class="flex-colunar padding-8">
-                            <span>Pontuação Final: <span id="spanPontuacaoFinal3">***</span></span>
-                            <span id="msgFinal3">***</span>
-                        </div>
-                    </div>
                     <div id="jogo3" class="width-fit-content flex-colunar border-secondary" style="display: none;">
                         <div id="infoQuestao3" class="padding-8">
                             <span>Questão atual: <span id="spanNumeroDaQuestaoAtual3"></span> de <span
@@ -1500,21 +1504,21 @@ function avancar4() {
 
         let mensagem = "";
 
-        if (resultadoFinal === "aventura") {
-            mensagem = `Você é como o Rockhopper! Corajoso, curioso e sempre pronto para aventuras.<br>
-        <img src="./assets/imgs/personagens/rock.webp" alt="" width="300px">`;
+        if (resultadoFinal == "aventura") {
+            mensagem += `Você é como o Rockhopper! Corajoso, curioso e sempre pronto para aventuras.<br>
+        <img src="/assets/imgs/personagens/rock.webp" alt="" width="300px">`;
         }
-        if (resultadoFinal === "criativo") {
-            mensagem = `Você é como o Gary! Criativo, inteligente e sempre inventando algo novo.<br>
-        <img src="./assets/imgs/personagens/gary.png" alt="" width="300px">`;
+        if (resultadoFinal == "criativo") {
+            mensagem += `Você é como o Gary! Criativo, inteligente e sempre inventando algo novo.<br>
+        <img src="/assets/imgs/personagens/gary.png" alt="" width="300px">`;
         }
-        if (resultadoFinal === "lider") {
-            mensagem = `Você é como o Sensei! Focado, disciplinado e um grande líder.<br>
-        <img src="./assets/imgs/personagens/sensei.png" alt="" width="300px">`;
+        if (resultadoFinal == "lider") {
+            mensagem += `Você é como o Sensei! Focado, disciplinado e um grande líder.<br>
+        <img src="/assets/imgs/personagens/sensei.png" alt="" width="300px">`;
         }
-        if (resultadoFinal === "calmo") {
-            mensagem = `Você é como a Tia Arctic! Calmo, sábio e sempre prestativo.<br>
-        <img src="./assets/imgs/personagens/tia-artic.png" alt="" width="300px">`;
+        if (resultadoFinal == "calmo") {
+            mensagem += `Você é como a Tia Arctic! Calmo, sábio e sempre prestativo.<br>
+        <img src="/assets/imgs/personagens/tia-artic.png" alt="" width="300px">`;
         }
 
         document.getElementById("pontuacao4").innerHTML = `
@@ -1739,19 +1743,19 @@ function avancar4() {
 
         if (resultadoFinal == "puffle_vermelho") {
             mensagem = `Você seria um Puffle Vermelho! Cheio de energia, aventura e emoção.<br>
-        <img src="./assets/imgs/personagens/puffle-vermelho.png" alt="" width="300px">`;
+        <img src="/assets/imgs/personagens/puffle-vermelho.png" alt="" width="300px">`;
         }
         if (resultadoFinal == "puffle_amarelo") {
             mensagem = `Você seria um Puffle Amarelo! Criativo, artístico e sempre imaginando algo novo.<br>
-        <img src="./assets/imgs/personagens/puffle-amarelo.webp" alt="" width="300px">`;
+        <img src="/assets/imgs/personagens/puffle-amarelo.webp" alt="" width="300px">`;
         }
         if (resultadoFinal == "puffle_preto") {
             mensagem = `Você seria um Puffle Preto! Intenso, determinado e cheio de atitude.<br>
-        <img src="./assets/imgs/personagens/puffle-preto.webp" alt="" width="300px">`;
+        <img src="/assets/imgs/personagens/puffle-preto.webp" alt="" width="300px">`;
         }
         if (resultadoFinal == "puffle_azul") {
             mensagem = `Você seria um Puffle Azul! Calmo, leal e sempre tranquilo.<br>
-        <img src="./assets/imgs/personagens/puffleAzul.png" alt="" width="300px">`;
+        <img src="/assets/imgs/personagens/puffleAzul.png" alt="" width="300px">`;
         }
 
         document.getElementById("pontuacao5").innerHTML = `

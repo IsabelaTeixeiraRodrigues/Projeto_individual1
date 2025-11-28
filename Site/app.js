@@ -32,7 +32,7 @@ app.use("/comunidade", comunidadeRouter);
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 
-// E SOMENTE DEPOIS colocar o static
+
 app.use(express.static(path.join(__dirname, "public")));
 
 
