@@ -85,12 +85,14 @@ body {
 
 .publicacao {
   display: flex;
+
   flex-wrap: wrap;
   align-content: stretch;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   border-bottom: 3px solid #87CEEB;
+  border-radius: 70px;
   padding: 20px;
 }
 

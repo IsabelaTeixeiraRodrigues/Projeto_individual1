@@ -684,7 +684,6 @@ const listaDeQuestoes = [
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
         fetch("/quiz/salvarResultado", {
@@ -800,7 +799,7 @@ const listaDeQuestoes = [
 
     ]
 
-    // variáveis globais    
+
     let numeroDaQuestaoAtual2 = 0
     let pontuacaoFinal2 = 0
     let tentativaIncorreta2 = 0
@@ -1089,7 +1088,7 @@ const listaDeQuestoes = [
 
     ]
 
-    // variáveis globais    
+   
     let numeroDaQuestaoAtual3 = 0
     let pontuacaoFinal3 = 0
     let tentativaIncorreta3 = 0
@@ -1418,7 +1417,7 @@ const listaDeQuestoes = [
     ];
 
 
-    // variáveis globais    
+        
     let numeroDaQuestaoAtual4 = 0
     let quantidadeDeQuestoes4 = listaDeQuestoes4.length
     let pontuacao = {
@@ -1817,8 +1816,6 @@ function avancar4() {
             options[i].checked = false;
         }
     }
-
-    // votação
 
 function verificarLogin() {
     if (!sessionStorage.ID_USUARIO) {

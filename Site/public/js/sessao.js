@@ -1,4 +1,4 @@
-// sessão
+
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nick = sessionStorage.NICK_USUARIO;
@@ -17,7 +17,7 @@ function limparSessao() {
     window.location = "../login.html";
 }
 
-// carregamento (loading)
+
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "flex";
